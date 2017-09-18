@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.exceptions import ObjectDoesNotExist
+from django.utils import timezone
 
 
 class Ingredient(models.Model):
@@ -13,9 +14,18 @@ class Recipe(models.Model):
     title = models.CharField(max_length=120)
     description = models.TextField()
     ingredients = models.ManyToManyField(Ingredient, through='Measure')
+    created_at = models.DateTimeField(default=timezone.now)
+    updated_at = models.DateTimeField(null=True)
 
     def __str__(self):
         return self.title
+
+    def save(self):
+        if self.id:
+            self.updated_at = timezone.now()
+        else:
+            self.created_at = timezone.now()
+            super(Recipe, self).save()
 
     def gen_initial_form_data(self):
         initial = [{'name': i.ingredient.name,
