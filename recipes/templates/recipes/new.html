@@ -6,15 +6,51 @@
                         <title>New</title>
                 </head>
                 <body>
+{% load staticfiles %}
+{{ formset.management_form }}
+{% if formset.non_form_errors %}
+        {{ formset.non_form_errors }}
+{% endif %}
+{% for form in formset %}
+        {% if form.errors %}
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <div class="alert alert-danger">
+                    <strong> {{field.label_tag}} {{ error|escape }}</strong>
+                    </div>
+            {% endfor %}
+{% endfor %}
+    {% for error in form.non_field_errors %}
+        <div class="alert alert-danger">
+            <strong>{{ error|escape }}</strong>
+        </div>
+    {% endfor %}
+    {% endif %}
+    {% endfor %}
                         <form action="" method="post" accept-charset="utf-8">
                                 {% csrf_token %}
                                 {{ form.as_p }}
                                 {{ formset.management_form }}
                                 {% for f in formset %}
+                                <div class='ingredient'>
                                 {{ f.as_p }}
+                                </div>
                                 {% endfor %}
+                                <p>
                                 <input type='submit' value="Submit"/>
+                                </p>
                         </form>
+<!-- use django dynamic formset plugin to add and remove form fields on the fly 
+        https://github.com/elo80ka/django-dynamic-formset-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="{% static 'recipes/jquery.formset.js' %}"></script>
+
+<!-- remember to set the prefix (defaults to the relationship field name), otherwise the new and old fields overlap each other -->
+<script type="text/javascript">
+    $(function() {
+            $('.ingredient').formset({addText: '+ ingredientes', deleteText: 'x'});
+    })
+</script>
 
                 </body>
         </html>

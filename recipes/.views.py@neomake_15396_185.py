@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import RecipeForm, IngredientFormSet, IngredientUpdateSet
+from .forms import RecipeForm, IngredientFormSet, IngredientForm
 from .models import Ingredient, Measure, Recipe
 
 
@@ -32,24 +32,17 @@ def update(request, recipe_id):
     recipe = get_object_or_404(Recipe, pk=recipe_id)
     if request.method == 'POST':
         form = RecipeForm(request.POST, instance=recipe)
-        formset = IngredientUpdateSet(request.POST)
-        # if form.is_valid() and formset.is_valid():
-        if form.is_valid():
+        formset = IngredientFormSet(request.POST)
+        if form.is_valid() and formset.is_valid():
             recipe = form.save()
-            new_ingredients = {}
-            for f in formset:
-                if f.is_valid():
-                    new_ingredients[f.cleaned_data.get('name')] = \
-                            f.cleaned_data.get('measure')
-            # new_ingredients = {i.cleaned_data.get('name'):
-            #                    i.cleaned_data.get('measure') for i in formset
-            #                    if i.cleaned_data.get('name')}
-            if new_ingredients:
-                recipe.update_ingredients(new_ingredients)
+            new_ingredients = {i.cleaned_data.get('name'):
+                               i.cleaned_data.get('measure') for i in formset
+                               if i.cleaned_data.get('name')}
+            recipe.update_ingredients(new_ingredients)
             return redirect('detail', recipe_id=recipe.id)
     form = RecipeForm(instance=recipe)
     initial_data = recipe.gen_initial_form_data()
-    formset = IngredientUpdateSet(initial=initial_data)
+    formset = IngredientFormSet(initial=initial_data)
     return render(request, 'recipes/update.html', {'form': form,
                                                    'formset': formset})
 

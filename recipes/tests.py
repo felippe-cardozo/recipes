@@ -126,15 +126,22 @@ class ViewsTest(TestCase):
         assoc = Measure.objects.get(ingredient=ingredient, recipe=recipe)
         self.assertEqual(assoc.measure, '1 kilo')
 
-    # def test_update_recipe(self):
-    #     c = Client()
-    #     recipe = Recipe.objects.create(title='test', description='test')
-    #     batata = Ingredient.objects.create(name='batata')
-    #     Measure.objects.create(ingredient=batata, recipe=recipe, measure='1')
-    #     response = c.post('/recipes/update/' + str(recipe.id) +
-    #                         '/', self.data)
-    #     self.assertEqual(response.status_code, 302)
-        # self.assertEqual(recipe.title, 'Test')
+    def test_update_recipe(self):
+        c = Client()
+        recipe = Recipe.objects.create(title='test', description='test')
+        update_url = '/recipes/update/' + str(recipe.id) + '/'
+        batata = Ingredient.objects.create(name='batata')
+        cenoura = Ingredient.objects.create(name='cenoura')
+        recipe.measure_set.create(ingredient=batata, measure='duas')
+        recipe.measure_set.create(ingredient=cenoura, measure='duas')
+        response = c.get(update_url)
+        self.assertEqual(response.status_code, 200)
+        form = response.context.get('form')
+        recipe_data = form.initial
+        formset = response.context['formset']
+        ingredients_data = formset.initial
+        self.assertEqual(recipe_data['title'], 'test')
+        self.assertTrue(ingredients_data[0]['name'] in {'batata', 'cenoura'})
 
     def test_index_page(self):
         c = Client()

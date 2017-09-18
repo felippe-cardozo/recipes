@@ -13,4 +13,6 @@ class IngredientForm(forms.Form):
     name = forms.CharField(max_length=120)
     measure = forms.CharField(max_length=120)
 
+
 IngredientFormSet = formset_factory(IngredientForm, extra=2)
+IngredientUpdateSet = formset_factory(IngredientForm, extra=0)
