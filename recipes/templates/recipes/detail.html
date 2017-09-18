@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body %}
+                
+
+                        <div class="jumbotron">
+                                <p> <h2>{{ recipe.title }}</h2> </p>
+                        <p>  {{ recipe.description }} </p>
+                        <p> Ingredientes: </p> 
+                        {% for i in ingredients %}
+                        <p>  {{ i.ingredient.name }} 
+                        {{ i.measure }} </p>
+                          {% endfor %}
+                          <a href="{% url 'index' %}">Index</a>
+                          <a href="{% url 'update' recipe.id %}">Anchor Text</a>
+                        </div>
+  {% endblock %}

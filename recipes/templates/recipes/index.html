@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body %}
+                
+
+                        {% if measures %}
+                        {% for m in measures %}
+                        <div class="jumbotron">
+                                <p> <h2>{{ m.0.title }}</h2> </p>
+                        <p>  {{ m.0.description }} </p>
+                        <p> Ingredientes: </p> 
+                        {% for i in m.1 %}
+                        <p>  {{ i.ingredient.name }} 
+                        {{ i.measure }} </p>
+                          {% endfor %}
+                          <a href="{% url 'detail' m.0.id%}">View More</a>
+                        </div>
+                        {% endfor %}
+                          {% else %}
+                          EMPTY 
+                          {% endif %}
+  {% endblock %}

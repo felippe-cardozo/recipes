@@ -1,0 +1,35 @@
+        <!DOCTYPE html>
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+        <html>
+                <head>
+                        <meta charset="UTF-8" />
+                        <meta name="viewport" content="width=device-width" />
+                        <title>Cookpy {% block title %} {% endblock %}</title>
+                </head>
+                <body>
+                        <nav class="navbar navbar-default navbar-fixed-top">
+                            <a class="navbar-brand" href="{% url 'index' %}">Recipes</a>
+        <div class="navbar-header">
+                <a href="{% url 'index' %}" class="navbar-brand">Home</a>
+                            <a class="navbar-brand" href="{% url 'new' %}">Add New Recipe</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+                        </nav>
+                        <div class="container">
+                                <div class="row">
+                                        <br />
+                                        <br />
+                                        <br />
+                                        <br />
+                            {% block body %} {% endblock %}
+                                </div>
+                        </div>
+                </body>
+        </html>
