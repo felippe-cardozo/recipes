@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from .forms import RecipeForm, IngredientFormSet, IngredientUpdateSet
 from .models import Ingredient, Measure, Recipe
 
@@ -9,6 +10,7 @@ def index(request):
     return render(request, 'recipes/index.html', {'measures': measures})
 
 
+@login_required
 def new(request):
     form = RecipeForm()
     formset = IngredientFormSet()
@@ -16,7 +18,10 @@ def new(request):
         form = RecipeForm(request.POST)
         formset = IngredientFormSet(request.POST)
         if form.is_valid() and formset.is_valid():
-            recipe = form.save()
+            recipe = form.save(commit=False)
+            author = request.user
+            recipe.author = author
+            recipe.save()
             for form in formset:
                 name = form.cleaned_data.get('name')
                 measure = form.cleaned_data.get('measure')

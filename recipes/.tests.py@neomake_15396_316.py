@@ -1,17 +1,14 @@
 from django.test import TestCase, Client
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate
 from recipes.models import Recipe, Ingredient, Measure
 from recipes.forms import RecipeForm, IngredientFormSet
 
 
 class RecipeModelTest(TestCase):
     def setUp(self):
-        self.user = User.objects.create(username='user', password='password')
-        self.lasanha = Recipe(title='lasanha', description='placeholder',
-                              author=self.user)
-        self.macarrao = Recipe(title='macarrao', description='placeholder',
-                               author=self.user)
+        self.lasanha = Recipe(title='lasanha', description='placeholder')
+        self.macarrao = Recipe(title='macarrao', description='placeholder')
         self.batata = Ingredient(name='batata')
         self.molho = Ingredient(name='molho')
 
@@ -55,9 +52,7 @@ class IngredientModelTest(TestCase):
 
 class MeasureRelationTest(TestCase):
     def setUp(self):
-        self.user = User.objects.create(username='user', password='password')
-        self.lasanha = Recipe(title='lasanha', description='placeholder',
-                              author=self.user)
+        self.lasanha = Recipe(title='lasanha', description='placeholder')
         self.batata = Ingredient(name='batata')
 
     def test_create_association(self):
@@ -110,8 +105,7 @@ class IngredientFormSetTest(TestCase):
 
 class ViewsTest(TestCase):
     def setUp(self):
-        self.user = User.objects.create_user(username='user',
-                                             password='password')
+        self.user = User.objects.create(username='user', password='password')
         self.data = {
                      'title': 'Test',
                      'description': 'desc',
@@ -125,7 +119,6 @@ class ViewsTest(TestCase):
 
     def test_post_new_recipe_with_ingredients(self):
         c = Client()
-        c.login(username='user', password='password')
         response = c.post('/recipes/new', self.data)
         self.assertEqual(response.status_code, 302)
         self.assertEqual(Recipe.objects.last().title, 'Test')
@@ -160,8 +153,7 @@ class ViewsTest(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_detail_view(self):
-        recipe = Recipe.objects.create(title='test', description='test',
-                                       author=self.user)
+        recipe = Recipe.objects.create(title='test', description='test')
         c = Client()
         response = c.get('/recipes/' + str(recipe.id) + '/')
         self.assertEqual(response.status_code, 200)

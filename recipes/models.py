@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.exceptions import ObjectDoesNotExist
+from django.contrib.auth.models import User
 from django.utils import timezone
 
 
@@ -11,6 +12,7 @@ class Ingredient(models.Model):
 
 
 class Recipe(models.Model):
+    author = models.ForeignKey(User)
     title = models.CharField(max_length=120)
     description = models.TextField()
     ingredients = models.ManyToManyField(Ingredient, through='Measure')
@@ -20,7 +22,7 @@ class Recipe(models.Model):
     def __str__(self):
         return self.title
 
-    def save(self):
+    def save(self, **kwargs):
         if self.id:
             self.updated_at = timezone.now()
         else:
