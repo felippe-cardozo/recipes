@@ -13,7 +13,9 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+from django.conf import settings
 from django.conf.urls import url, include
+from django.conf.urls.static import static
 from django.contrib import admin
 from recipes.views import register, log_in, log_out
 
@@ -24,4 +26,4 @@ urlpatterns = [
     url(r'^registration/$', register, name='registration'),
     url(r'^login/$', log_in, name='login'),
     url(r'^logout/$', log_out, name='logout'),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

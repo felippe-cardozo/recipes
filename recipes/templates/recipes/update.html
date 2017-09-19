@@ -1,12 +1,10 @@
-        <!DOCTYPE html>
-        <html>
-                <head>
-                        <meta charset="UTF-8" />
-                        <meta name="viewport" content="width=device-width" />
-                        <title>Update</title>
-                </head>
-                <body>
-                        <form action="" method="post" accept-charset="utf-8">
+{% extends 'base.html' %}                        
+{% load staticfiles %}
+{% block title %}
+Change
+{% endblock %}
+{% block body %}
+<form action="" method="post" accept-charset="utf-8">
                                 {% csrf_token %}
                                 {{ form.as_p }}
                                 {{ formset.management_form }}
@@ -52,5 +50,4 @@
             $('.ingredient').formset({addText: '+ ingredientes', deleteText: 'x'});
     })
 </script>
-                </body>
-        </html>
+{% endblock %}

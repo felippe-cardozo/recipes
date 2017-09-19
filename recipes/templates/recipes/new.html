@@ -1,12 +1,9 @@
-        <!DOCTYPE html>
-        <html>
-                <head>
-                        <meta charset="UTF-8" />
-                        <meta name="viewport" content="width=device-width" />
-                        <title>New</title>
-                </head>
-                <body>
+{% extends 'base.html' %}
+{% block title %}
+Create
+{% endblock %}
 {% load staticfiles %}
+{% block body %}
 {{ formset.management_form }}
 {% if formset.non_form_errors %}
         {{ formset.non_form_errors }}
@@ -51,6 +48,4 @@
             $('.ingredient').formset({addText: '+ ingredientes', deleteText: 'x'});
     })
 </script>
-
-                </body>
-        </html>
+{% endblock %}
