@@ -1,7 +1,35 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from .forms import RecipeForm, IngredientFormSet, IngredientUpdateSet
+from django.contrib.auth import authenticate, login
+from .forms import RecipeForm, IngredientFormSet, IngredientUpdateSet,\
+                   UserForm, LoginForm
 from .models import Ingredient, Measure, Recipe
+
+
+def log_in(request):
+    form = LoginForm()
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            user = authenticate(username=form.cleaned_data.get('username'),
+                                password=form.cleaned_data.get('password'))
+            if user:
+                if user.is_active:
+                    login(request, user)
+                    return redirect('index')
+    return render(request, 'recipes/login.html', {'form': form})
+
+
+def register(request):
+    form = UserForm()
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            user.set_password(user.password)
+            user.save()
+            return redirect('index')
+    return render(request, 'recipes/register.html', {'form': form})
 
 
 def index(request):

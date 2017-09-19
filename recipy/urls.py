@@ -15,8 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from recipes.views import register, log_in
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^recipes/', include('recipes.urls')),
+    url(r'^registration/$', register, name='registration'),
+    url(r'^login/$', log_in, name='login'),
 ]

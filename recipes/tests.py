@@ -1,6 +1,5 @@
 from django.test import TestCase, Client
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
 from recipes.models import Recipe, Ingredient, Measure
 from recipes.forms import RecipeForm, IngredientFormSet
 
@@ -165,3 +164,17 @@ class ViewsTest(TestCase):
         c = Client()
         response = c.get('/recipes/' + str(recipe.id) + '/')
         self.assertEqual(response.status_code, 200)
+
+    def test_login_view(self):
+        c = Client()
+        response = c.post('/login/', {'username': 'user',
+                                      'password': 'password'})
+        self.assertEqual(response.status_code, 302)
+
+    def test_registration_view(self):
+        c = Client()
+        data = {'username': 'testuser', 'email': 'test@gmail.com',
+                'password': 'password', 'confirm_password': 'password'}
+        response = c.post('/registration/', data=data)
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(User.objects.last().username, 'testuser')
