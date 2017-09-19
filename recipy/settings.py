@@ -71,7 +71,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'recipy.wsgi.application'
 
-BOOTSTRAP3 = {'theme_url': 'static/css/spacelab-bootstrap.css', }
+BOOTSTRAP3 = {'theme_url': '/static/css/space.css', }
 
 
 # Database
