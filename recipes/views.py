@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
+from django.http import HttpResponse
 from .forms import RecipeForm, IngredientFormSet, IngredientUpdateSet,\
                    UserForm, LoginForm
 from .models import Ingredient, Measure, Recipe
@@ -98,3 +99,16 @@ def detail(request, recipe_id):
     ingredients = [i for i in recipe.measure_set.all()]
     return render(request, 'recipes/detail.html', {'recipe': recipe,
                                                    'ingredients': ingredients})
+
+
+@login_required
+def like(request):
+    likes = 0
+    rid = None
+    if request.method == 'GET':
+        rid = request.GET['recipe_id']
+    if rid:
+        recipe = Recipe.objects.get(id=int(rid))
+        recipe.likes.add(request.user)
+        likes = recipe.likes.count()
+    return HttpResponse(likes)

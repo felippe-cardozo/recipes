@@ -16,5 +16,10 @@
                           {% endfor %}
                           <a href="{% url 'index' %}">Index</a>
                           <a href="{% url 'update' recipe.id %}">Update</a>
+                          <strong id="likes_count">{{ recipe.likes.count }}</strong> people liked this recipe
+                          {% if user.is_authenticated %}
+                          <button id="like" data-rid="{{ recipe.id }}" type="button"> like </button>
+                          {% endif %}
                         </div>
+                        <script src={% static 'recipes/likes.js' %}></script>
   {% endblock %}
