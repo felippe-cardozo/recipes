@@ -112,3 +112,15 @@ def like(request):
         recipe.likes.add(request.user)
         likes = recipe.likes.count()
     return HttpResponse(likes)
+
+@login_required
+def unlike(request):
+    likes = 0
+    rid = None
+    if request.method == 'GET':
+        rid = request.GET['recipe_id']
+    if rid:
+        recipe = Recipe.objects.get(id=int(rid))
+        recipe.likes.remove(request.user)
+        likes = recipe.likes.count()
+    return HttpResponse(likes)

@@ -108,6 +108,9 @@ class IngredientFormSetTest(TestCase):
 
 
 class ViewsTest(TestCase):
+
+    fixtures = ['users.json']
+
     def setUp(self):
         self.user = User.objects.create_user(username='user',
                                              password='password')
@@ -167,7 +170,7 @@ class ViewsTest(TestCase):
 
     def test_login_view(self):
         c = Client()
-        response = c.post('/login/', {'username': 'user',
+        response = c.post('/login/', {'username': 'fcc',
                                       'password': 'password'})
         self.assertEqual(response.status_code, 302)
 

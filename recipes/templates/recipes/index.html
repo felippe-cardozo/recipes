@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% block title %}
+Index
+{% endblock %}
 {% block body %}
                 
 
@@ -13,7 +16,9 @@
                         <p>  {{ i.ingredient.name }} 
                         {{ i.measure }} </p>
                           {% endfor %}
+                          <div class='recipe-url'>
                           <a href="{% url 'detail' m.0.id%}">View More</a>
+                          </div>
                         </div>
                         {% endfor %}
                           {% else %}

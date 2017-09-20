@@ -1,0 +1,452 @@
+1505910739620	geckodriver	INFO	geckodriver 0.19.0
+1505910739625	geckodriver	INFO	Listening on 127.0.0.1:38493
+1505910741665	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.IXkcejbEX8iO"
+1505910743764	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///usr/lib/firefox/omni.ja!/components/addonManager.js:65
+1505910745249	Marionette	INFO	Enabled via --marionette
+1505910748855	Marionette	INFO	Listening on port 34907
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1505910749037	Marionette	WARN	TLS certificate errors will be ignored for this session
+1505910749109	Marionette	DEBUG	loaded listener.js
+1505910749206	Marionette	INFO	New connections will no longer be accepted
+[Child 7501] WARNING: pipe error (20): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 7501] WARNING: pipe error (35): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 7501] WARNING: pipe error (3): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1505910787626	geckodriver	INFO	geckodriver 0.19.0
+1505910787632	geckodriver	INFO	Listening on 127.0.0.1:44943
+1505910788698	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.ANe4X8Z00UAr"
+1505910789209	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///usr/lib/firefox/omni.ja!/components/addonManager.js:65
+1505910789669	Marionette	INFO	Enabled via --marionette
+1505910791408	Marionette	INFO	Listening on port 35663
+1505910791440	Marionette	WARN	TLS certificate errors will be ignored for this session
+1505910791527	Marionette	DEBUG	loaded listener.js
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1505910791731	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1505910791785	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1505910791785	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505910792586	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:34609/login/"
+1505910792843	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:34609/login/"
+1505910793090	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:34609/login/"
+1505910793179	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:34609/login/"
+1505910793180	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:34609/login/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505910793270	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:34609/login/"
+1505910793288	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:34609/login/"
+1505910795086	Marionette	INFO	New connections will no longer be accepted
+1505911958924	geckodriver	INFO	geckodriver 0.19.0
+1505911958929	geckodriver	INFO	Listening on 127.0.0.1:39449
+1505911959990	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.Pn65riAt8oIW"
+1505911960478	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///usr/lib/firefox/omni.ja!/components/addonManager.js:65
+1505911960924	Marionette	INFO	Enabled via --marionette
+1505911962695	Marionette	INFO	Listening on port 37123
+1505911962900	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1505911962965	Marionette	DEBUG	loaded listener.js
+1505911963417	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1505911963456	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1505911963456	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505911964116	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:46349/login/"
+1505911964831	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:46349/login/"
+1505911965028	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:46349/login/"
+1505911965117	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:46349/login/"
+1505911965118	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:46349/login/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505911965213	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:46349/login/"
+1505911965236	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:46349/login/"
+1505911966927	Marionette	INFO	New connections will no longer be accepted
+[Child 10850] WARNING: pipe error (35): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 10850] WARNING: pipe error (18): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 10850] WARNING: pipe error (3): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1505912085283	geckodriver	INFO	geckodriver 0.19.0
+1505912085288	geckodriver	INFO	Listening on 127.0.0.1:55969
+1505912086352	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.EFeKW5wK05e2"
+1505912086717	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///usr/lib/firefox/omni.ja!/components/addonManager.js:65
+1505912087173	Marionette	INFO	Enabled via --marionette
+1505912088890	Marionette	INFO	Listening on port 43115
+1505912089071	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1505912089139	Marionette	DEBUG	loaded listener.js
+1505912089245	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1505912089293	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1505912089293	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505912090000	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:57723/login/"
+1505912090515	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:57723/login/"
+1505912090703	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:57723/login/"
+1505912090787	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:57723/login/"
+1505912090787	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:57723/login/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505912090878	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:57723/login/"
+1505912090894	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:57723/login/"
+1505912092589	Marionette	INFO	New connections will no longer be accepted
+[Child 11336] WARNING: pipe error (18): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 11336] WARNING: pipe error (3): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1505912392799	geckodriver	INFO	geckodriver 0.19.0
+1505912392804	geckodriver	INFO	Listening on 127.0.0.1:57667
+1505912393866	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.0ygncLRt978f"
+1505912394393	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///usr/lib/firefox/omni.ja!/components/addonManager.js:65
+1505912394839	Marionette	INFO	Enabled via --marionette
+1505912396592	Marionette	INFO	Listening on port 37043
+1505912396768	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1505912396832	Marionette	DEBUG	loaded listener.js
+1505912396970	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1505912397011	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1505912397011	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505912398715	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:60047/login/"
+1505912399065	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:60047/login/"
+1505912399269	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:60047/login/"
+1505912399433	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:60047/login/"
+1505912399433	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:60047/login/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505912399534	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:60047/recipes/"
+1505912399544	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:60047/recipes/"
+1505912401236	Marionette	INFO	New connections will no longer be accepted
+[Child 12334] WARNING: pipe error (18): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 12334] WARNING: pipe error (3): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1505912860455	geckodriver	INFO	geckodriver 0.19.0
+1505912860460	geckodriver	INFO	Listening on 127.0.0.1:43453
+1505912861519	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.OIarl4oNsWsT"
+1505912861880	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///usr/lib/firefox/omni.ja!/components/addonManager.js:65
+1505912862339	Marionette	INFO	Enabled via --marionette
+1505912864092	Marionette	INFO	Listening on port 46681
+1505912864259	Marionette	WARN	TLS certificate errors will be ignored for this session
+1505912864332	Marionette	DEBUG	loaded listener.js
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1505912864507	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1505912864527	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1505912864527	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1505912864536	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:47639/"
+1505912864554	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:47639/"
+1505912866466	Marionette	INFO	New connections will no longer be accepted
+[Child 13669] WARNING: pipe error (18): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 13669] WARNING: pipe error (3): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1505912886677	geckodriver	INFO	geckodriver 0.19.0
+1505912886682	geckodriver	INFO	Listening on 127.0.0.1:42439
+1505912887739	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.srbGPqd2YKDX"
+1505912888107	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///usr/lib/firefox/omni.ja!/components/addonManager.js:65
+1505912888556	Marionette	INFO	Enabled via --marionette
+1505912890305	Marionette	INFO	Listening on port 33025
+1505912890479	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1505912890548	Marionette	DEBUG	loaded listener.js
+1505912890726	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1505912890790	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1505912890790	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505912891349	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:54883/recipes/"
+1505912891758	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:54883/recipes/"
+1505912893539	Marionette	INFO	New connections will no longer be accepted
+[Child 13862] WARNING: pipe error (35): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 13862] WARNING: pipe error (20): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 13862] WARNING: pipe error (3): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1505912917369	geckodriver	INFO	geckodriver 0.19.0
+1505912917374	geckodriver	INFO	Listening on 127.0.0.1:59973
+1505912918433	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.4uyMi5imWdWy"
+1505912918963	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///usr/lib/firefox/omni.ja!/components/addonManager.js:65
+1505912919410	Marionette	INFO	Enabled via --marionette
+1505912921177	Marionette	INFO	Listening on port 45457
+1505912921344	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1505912921410	Marionette	DEBUG	loaded listener.js
+1505912921597	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1505912921668	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1505912921668	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505912922267	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:57545/recipes/"
+1505912922588	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:57545/recipes/"
+1505912924276	Marionette	INFO	New connections will no longer be accepted
+[Child 14073] WARNING: pipe error (19): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 14073] WARNING: pipe error (3): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1505912950455	geckodriver	INFO	geckodriver 0.19.0
+1505912950460	geckodriver	INFO	Listening on 127.0.0.1:49313
+1505912951540	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.Sx1JObIgGLaV"
+1505912951914	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///usr/lib/firefox/omni.ja!/components/addonManager.js:65
+1505912952371	Marionette	INFO	Enabled via --marionette
+1505912954248	Marionette	INFO	Listening on port 41397
+1505912954269	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1505912954340	Marionette	DEBUG	loaded listener.js
+1505912954494	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1505912954561	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1505912954561	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505912955157	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:35251/recipes/"
+1505912955508	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:35251/recipes/"
+1505912955623	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:35251/recipes/"
+1505912955671	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:35251/recipes/"
+1505912955672	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:35251/recipes/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505912955781	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:35251/recipes/2/"
+1505912955900	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:35251/recipes/2/"
+1505912957670	Marionette	INFO	New connections will no longer be accepted
+[Child 14282] WARNING: pipe error (18): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 14282] WARNING: pipe error (3): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1505913529856	geckodriver	INFO	geckodriver 0.19.0
+1505913529861	geckodriver	INFO	Listening on 127.0.0.1:50555
+1505913530916	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.TnM8JpKt1wXr"
+1505913531279	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///usr/lib/firefox/omni.ja!/components/addonManager.js:65
+1505913531733	Marionette	INFO	Enabled via --marionette
+1505913533465	Marionette	INFO	Listening on port 35931
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1505913533664	Marionette	WARN	TLS certificate errors will be ignored for this session
+1505913533738	Marionette	DEBUG	loaded listener.js
+1505913533888	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1505913533962	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1505913533963	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505913534531	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:55669/recipes/"
+1505913534909	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:55669/recipes/"
+1505913535017	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:55669/recipes/"
+1505913535082	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:55669/recipes/"
+1505913535082	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:55669/recipes/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505913535191	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:55669/recipes/2/"
+1505913535299	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:55669/recipes/2/"
+1505913537031	Marionette	INFO	New connections will no longer be accepted
+1505913581541	geckodriver	INFO	geckodriver 0.19.0
+1505913581546	geckodriver	INFO	Listening on 127.0.0.1:59177
+1505913582600	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.EEyDHlB7yd5U"
+1505913582995	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///usr/lib/firefox/omni.ja!/components/addonManager.js:65
+1505913583456	Marionette	INFO	Enabled via --marionette
+1505913585276	Marionette	INFO	Listening on port 33909
+1505913585457	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1505913585525	Marionette	DEBUG	loaded listener.js
+1505913585701	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1505913585772	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1505913585773	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505913586333	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:42001/recipes/"
+1505913586743	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:42001/recipes/"
+1505913586894	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:42001/recipes/"
+1505913586932	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:42001/recipes/"
+1505913586933	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:42001/recipes/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505913587037	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:42001/recipes/2/"
+1505913587143	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:42001/recipes/2/"
+1505913587210	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:42001/recipes/2/"
+1505913587259	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:42001/recipes/2/"
+1505913587259	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:42001/recipes/2/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505913587449	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:42001/recipes/update/2/"
+1505913587452	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:42001/recipes/update/2/"
+1505913587725	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1505913589776	Marionette	INFO	New connections will no longer be accepted
+[Child 16378] WARNING: pipe error (20): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 16378] WARNING: pipe error (3): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1505913620837	geckodriver	INFO	geckodriver 0.19.0
+1505913620847	geckodriver	INFO	Listening on 127.0.0.1:46019
+1505913621898	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.FsPHFoXE7SIX"
+1505913622415	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///usr/lib/firefox/omni.ja!/components/addonManager.js:65
+1505913622868	Marionette	INFO	Enabled via --marionette
+1505913624852	Marionette	INFO	Listening on port 45179
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1505913624923	Marionette	WARN	TLS certificate errors will be ignored for this session
+1505913624988	Marionette	DEBUG	loaded listener.js
+1505913625162	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1505913625231	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1505913625231	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505913625826	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:48591/recipes/"
+1505913626217	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:48591/recipes/"
+1505913626334	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:48591/recipes/"
+1505913626368	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:48591/recipes/"
+1505913626369	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:48591/recipes/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505913626475	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:48591/recipes/2/"
+1505913626580	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:48591/recipes/2/"
+1505913626651	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:48591/recipes/2/"
+1505913626696	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:48591/recipes/2/"
+1505913626697	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:48591/recipes/2/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505913626907	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:48591/recipes/update/2/"
+1505913626910	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:48591/recipes/update/2/"
+1505913627189	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505913629214	Marionette	INFO	New connections will no longer be accepted
+[Child 16612] WARNING: pipe error (18): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 16612] WARNING: pipe error (3): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1505913814490	geckodriver	INFO	geckodriver 0.19.0
+1505913814495	geckodriver	INFO	Listening on 127.0.0.1:57047
+1505913815550	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.A4QqBYUJzmtm"
+1505913815912	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///usr/lib/firefox/omni.ja!/components/addonManager.js:65
+1505913816368	Marionette	INFO	Enabled via --marionette
+1505913818132	Marionette	INFO	Listening on port 41321
+1505913818300	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1505913818373	Marionette	DEBUG	loaded listener.js
+1505913818574	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1505913818641	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1505913818641	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505913819237	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:53517/recipes/"
+1505913819669	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:53517/recipes/"
+1505913819778	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:53517/recipes/"
+1505913819817	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:53517/recipes/"
+1505913819818	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:53517/recipes/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505913819929	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:53517/recipes/2/"
+1505913820045	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:53517/recipes/2/"
+1505913820116	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:53517/recipes/2/"
+1505913820160	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:53517/recipes/2/"
+1505913820161	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:53517/recipes/2/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505913820360	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:53517/recipes/update/2/"
+1505913820363	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:53517/recipes/update/2/"
+1505913820630	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505913822779	Marionette	INFO	New connections will no longer be accepted
+[Child 17280] WARNING: pipe error (19): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 17280] WARNING: pipe error (3): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1505913918578	geckodriver	INFO	geckodriver 0.19.0
+1505913918583	geckodriver	INFO	Listening on 127.0.0.1:53773
+1505913919636	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.B9Zpnt2DayJs"
+1505913919998	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///usr/lib/firefox/omni.ja!/components/addonManager.js:65
+1505913920454	Marionette	INFO	Enabled via --marionette
+1505913922230	Marionette	INFO	Listening on port 33491
+1505913922401	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1505913922481	Marionette	DEBUG	loaded listener.js
+1505913922660	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1505913922727	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1505913922728	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505913923320	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:37163/recipes/"
+1505913923630	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:37163/recipes/"
+1505913923740	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:37163/recipes/"
+1505913923792	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:37163/recipes/"
+1505913923793	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:37163/recipes/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505913923897	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:37163/recipes/2/"
+1505913924002	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:37163/recipes/2/"
+1505913924080	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:37163/recipes/2/"
+1505913924125	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:37163/recipes/2/"
+1505913924125	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:37163/recipes/2/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505913924313	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:37163/recipes/update/2/"
+1505913924316	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:37163/recipes/update/2/"
+1505913924584	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505913926722	Marionette	INFO	New connections will no longer be accepted
+[Child 17635] WARNING: pipe error (18): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 17635] WARNING: pipe error (3): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1505914004333	geckodriver	INFO	geckodriver 0.19.0
+1505914004338	geckodriver	INFO	Listening on 127.0.0.1:35097
+1505914005391	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.k33mhcM4QgRi"
+1505914005758	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///usr/lib/firefox/omni.ja!/components/addonManager.js:65
+1505914006215	Marionette	INFO	Enabled via --marionette
+1505914008009	Marionette	INFO	Listening on port 43319
+1505914008192	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1505914008261	Marionette	DEBUG	loaded listener.js
+1505914008436	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1505914008502	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1505914008503	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505914009085	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:56125/recipes/"
+1505914009510	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:56125/recipes/"
+1505914009627	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:56125/recipes/"
+1505914009662	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:56125/recipes/"
+1505914009662	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:56125/recipes/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505914009764	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:56125/recipes/2/"
+1505914009869	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:56125/recipes/2/"
+1505914009941	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:56125/recipes/2/"
+1505914009987	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:56125/recipes/2/"
+1505914009988	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:56125/recipes/2/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505914010199	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:56125/recipes/update/2/"
+1505914010202	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:56125/recipes/update/2/"
+1505914010472	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505914012555	Marionette	INFO	New connections will no longer be accepted
+[Child 17959] WARNING: pipe error (19): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 17959] WARNING: pipe error (3): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1505914611833	geckodriver	INFO	geckodriver 0.19.0
+1505914611838	geckodriver	INFO	Listening on 127.0.0.1:45595
+1505914612893	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.DDbY9pv0Dhoy"
+1505914613291	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///usr/lib/firefox/omni.ja!/components/addonManager.js:65
+1505914613803	Marionette	INFO	Enabled via --marionette
+1505914615737	Marionette	INFO	Listening on port 36791
+1505914615920	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1505914616003	Marionette	DEBUG	loaded listener.js
+1505914616193	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1505914616238	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1505914616238	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505914616821	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:44829/login/"
+1505914617300	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:44829/login/"
+1505914617518	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:44829/login/"
+1505914617702	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:44829/login/"
+1505914617702	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:44829/login/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505914617798	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:44829/recipes/"
+1505914617810	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:44829/recipes/"
+1505914619439	Marionette	INFO	New connections will no longer be accepted
+[Child 19590] WARNING: pipe error (18): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 19590] WARNING: pipe error (3): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1505915135789	geckodriver	INFO	geckodriver 0.19.0
+1505915135795	geckodriver	INFO	Listening on 127.0.0.1:52303
+1505915136874	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.UJP9EcZx5flX"
+1505915137375	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///usr/lib/firefox/omni.ja!/components/addonManager.js:65
+1505915137834	Marionette	INFO	Enabled via --marionette
+1505915139557	Marionette	INFO	Listening on port 38453
+1505915139728	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1505915139798	Marionette	DEBUG	loaded listener.js
+1505915139983	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1505915140027	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1505915140028	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505915140797	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:52789/login/"
+1505915141084	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:52789/login/"
+1505915141316	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:52789/login/"
+1505915141478	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:52789/login/"
+1505915141479	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:52789/login/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505915141575	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:52789/recipes/"
+1505915141588	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:52789/recipes/"
+1505915141663	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:52789/recipes/"
+1505915141704	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:52789/recipes/"
+1505915141705	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:52789/recipes/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505915141810	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:52789/recipes/3/"
+1505915141813	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:52789/recipes/3/"
+1505915143714	Marionette	INFO	New connections will no longer be accepted
+[Child 21051] WARNING: pipe error (19): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 21051] WARNING: pipe error (3): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1505915167411	geckodriver	INFO	geckodriver 0.19.0
+1505915167416	geckodriver	INFO	Listening on 127.0.0.1:54949
+1505915168490	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.5BTvHCyV3EZA"
+1505915169035	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///usr/lib/firefox/omni.ja!/components/addonManager.js:65
+1505915169490	Marionette	INFO	Enabled via --marionette
+1505915171465	Marionette	INFO	Listening on port 34029
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1505915171512	Marionette	WARN	TLS certificate errors will be ignored for this session
+1505915171573	Marionette	DEBUG	loaded listener.js
+1505915171750	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1505915171794	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1505915171795	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505915172572	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:59939/login/"
+1505915172831	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:59939/login/"
+1505915173024	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:59939/login/"
+1505915173177	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:59939/login/"
+1505915173177	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:59939/login/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505915173286	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:59939/recipes/"
+1505915173299	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:59939/recipes/"
+1505915173372	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:59939/recipes/"
+1505915173413	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:59939/recipes/"
+1505915173414	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:59939/recipes/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505915173525	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:59939/recipes/4/"
+1505915173528	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:59939/recipes/4/"
+1505915173825	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1505915175591	Marionette	INFO	New connections will no longer be accepted
+[Child 21265] WARNING: pipe error (18): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 21265] WARNING: pipe error (3): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353

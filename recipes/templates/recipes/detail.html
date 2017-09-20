@@ -11,15 +11,24 @@
                         <p>  {{ recipe.description }} </p>
                         <p> Ingredientes: </p> 
                         {% for i in ingredients %}
-                        <p>  {{ i.ingredient.name }} 
+                        <p id='ingredient'>  {{ i.ingredient.name }} 
                         {{ i.measure }} </p>
                           {% endfor %}
-                          <a href="{% url 'index' %}">Index</a>
-                          <a href="{% url 'update' recipe.id %}">Update</a>
                           <strong id="likes_count">{{ recipe.likes.count }}</strong> people liked this recipe
                           {% if user.is_authenticated %}
-                          <button id="like" data-rid="{{ recipe.id }}" type="button"> like </button>
+                              {% if user in recipe.likes.all %}
+                                  <button style='display: none;' id="like" data-rid="{{ recipe.id }}" type="button"> like </button>
+                                  <button id='unlike' data-rid="{{recipe.id}}" type="button"> unlike </button>
+                              {% else %}
+                                  <button id="like" data-rid="{{ recipe.id }}" type="button"> like </button>
+                                  <button style='display: none;' id='unlike' data-rid="{{recipe.id}}" type="button"> unlike </button>
+                                  {% endif %}
                           {% endif %}
                         </div>
+                        <p>
+                          <a href="{% url 'index' %}">Index</a>
+                          <a href="{% url 'update' recipe.id %}">Update</a>
+                        </p>
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                         <script src={% static 'recipes/likes.js' %}></script>
   {% endblock %}
