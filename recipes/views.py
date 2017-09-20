@@ -102,25 +102,16 @@ def detail(request, recipe_id):
 
 
 @login_required
-def like(request):
-    likes = 0
-    rid = None
-    if request.method == 'GET':
-        rid = request.GET['recipe_id']
-    if rid:
-        recipe = Recipe.objects.get(id=int(rid))
+def like(request, recipe_id):
+    if request.method == 'POST':
+        recipe = Recipe.objects.get(pk=recipe_id)
         recipe.likes.add(request.user)
-        likes = recipe.likes.count()
-    return HttpResponse(likes)
+    return redirect('detail', recipe_id=recipe_id)
+
 
 @login_required
-def unlike(request):
-    likes = 0
-    rid = None
-    if request.method == 'GET':
-        rid = request.GET['recipe_id']
-    if rid:
-        recipe = Recipe.objects.get(id=int(rid))
+def unlike(request, recipe_id):
+    if request.method == 'POST':
+        recipe = Recipe.objects.get(pk=recipe_id)
         recipe.likes.remove(request.user)
-        likes = recipe.likes.count()
-    return HttpResponse(likes)
+    return redirect('detail', recipe_id=recipe_id)

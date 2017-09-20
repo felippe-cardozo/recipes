@@ -20,6 +20,6 @@ urlpatterns = [
     url(r'^new$', views.new, name='new'),
     url(r'^(?P<recipe_id>[0-9]+)/$', views.detail, name='detail'),
     url(r'^update/(?P<recipe_id>[0-9]+)/$', views.update, name='update'),
-    url(r'^like/$', views.like, name='like'),
-    url(r'^unlike/$', views.unlike, name='unlike'),
+    url(r'^like/(?P<recipe_id>[0-9]+)/$', views.like, name='like'),
+    url(r'^unlike/(?P<recipe_id>[0-9]+)/$', views.unlike, name='unlike'),
 ]
