@@ -13,7 +13,8 @@ class Ingredient(models.Model):
 
 class Recipe(models.Model):
     author = models.ForeignKey(User)
-    likes = models.ManyToManyField(User, related_name='User_likes')
+    likes = models.ManyToManyField(User, related_name='user_likes')
+    cookbook_users = models.ManyToManyField(User, related_name='cookbook')
     title = models.CharField(max_length=120)
     description = models.TextField()
     ingredients = models.ManyToManyField(Ingredient, through='Measure')

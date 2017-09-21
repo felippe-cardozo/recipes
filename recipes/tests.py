@@ -114,6 +114,9 @@ class ViewsTest(TestCase):
     def setUp(self):
         self.user = User.objects.create_user(username='user',
                                              password='password')
+        self.recipe = Recipe.objects.create(title='test',
+                                            description='placeholder',
+                                            author=self.user)
         self.data = {
                      'title': 'Test',
                      'description': 'desc',
@@ -130,9 +133,9 @@ class ViewsTest(TestCase):
         c.login(username='user', password='password')
         response = c.post('/recipes/new', self.data)
         self.assertEqual(response.status_code, 302)
+        recipe = Recipe.objects.last()
         self.assertEqual(Recipe.objects.last().title, 'Test')
-        self.assertEqual(Recipe.objects.all().count(), 1)
-        self.assertEqual(Ingredient.objects.all().count(), 2)
+        self.assertEqual(recipe.ingredients.count(), 2)
         recipe = Recipe.objects.get(title='Test')
         ingredient = Ingredient.objects.get(name='batata')
         assoc = Measure.objects.get(ingredient=ingredient, recipe=recipe)
@@ -181,3 +184,17 @@ class ViewsTest(TestCase):
         response = c.post('/registration/', data=data)
         self.assertEqual(response.status_code, 302)
         self.assertEqual(User.objects.last().username, 'testuser')
+
+    def test_like_and_unlike_view(self):
+        c = Client()
+        c.login(username='f', password='password')
+        c.post('/recipes/like/' + str(self.recipe.id) + '/')
+        self.assertEqual(self.recipe.likes.count(), 1)
+        c.post('/recipes/unlike/' + str(self.recipe.id) + '/')
+        self.assertEqual(self.recipe.likes.count(), 0)
+
+    def test_add_and_remove_from_cookbook(self):
+        c = Client()
+        c.login(username='f', password='password')
+        c.post('/recipes/add_to_cookbook/' + str(self.recipe.id) + '/')
+        self.assertEqual(self.recipe.cookbook.count(), 1)

@@ -26,7 +26,7 @@ $(document).ready(function(){
                 });
         
         $('#unlike').click(function(){
-                var csrftoken = getCookie('csrftoken')
+                var csrftoken = getCookie('csrftoken');
                 var rid = $(this).attr("data-rid");
                 var count = parseInt($('#likes_count').text());
                 $.post('/recipes/unlike/' + rid + '/', {'csrfmiddlewaretoken': csrftoken});
@@ -34,5 +34,19 @@ $(document).ready(function(){
                 $('#likes_count').html(count);
                 $('#unlike').hide();
                 $('#like').show();
+        });
+        $('#add_cookbook').click(function(){
+                var csrftoken = getCookie('csrftoken');
+                var rid = $('#like').attr("data-rid");
+                $.post('/recipes/add_to_cookbook/' + rid + '/', {'csrfmiddlewaretoken': csrftoken});
+                $('#add_cookbook').hide();
+                $('#remove_cookbook').show();
+        });
+        $('#remove_cookbook').click(function(){
+                var csrftoken = getCookie('csrftoken');
+                var rid = $('#like').attr("data-rid");
+                $.post('/recipes/remove_from_cookbook/' + rid + '/', {'csrfmiddlewaretoken': csrftoken});
+                $('#add_cookbook').show();
+                $('#remove_cookbook').hide();
         });
 });

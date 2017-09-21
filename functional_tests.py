@@ -60,3 +60,12 @@ class MySeleniumTests(StaticLiveServerTestCase):
         new_likes_count = self.selenium.find_element_by_id('likes_count').text
         self.assertEqual(int(new_likes_count) - int(likes_count), -1)
 
+    def test_add_to_cookbook(self):
+        self.login()
+        details = self.selenium.find_elements_by_link_text('View More')
+        details[0].click()
+        add_to_cookbook = self.selenium.find_elements_by_id('add_cookbook')
+        add_to_cookbook.click()
+        add_to_cookbook = self.selenium.find_elements_by_id('add_cookbook')
+        self.assertEqual(add_to_cookbook.text, 'Remove From Cookbook')
+        

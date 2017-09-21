@@ -450,3 +450,75 @@ JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.mi
 1505915175591	Marionette	INFO	New connections will no longer be accepted
 [Child 21265] WARNING: pipe error (18): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
 [Child 21265] WARNING: pipe error (3): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1505997016641	geckodriver	INFO	geckodriver 0.19.0
+1505997016647	geckodriver	INFO	Listening on 127.0.0.1:50407
+1505997017703	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.4woI2484jMN5"
+1505997018266	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///usr/lib/firefox/omni.ja!/components/addonManager.js:65
+1505997018776	Marionette	INFO	Enabled via --marionette
+1505997020675	Marionette	INFO	Listening on port 36781
+1505997020896	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1505997020966	Marionette	DEBUG	loaded listener.js
+1505997021061	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1505997021087	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1505997021087	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505997021970	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:41563/login/"
+1505997022266	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:41563/login/"
+1505997022532	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:41563/login/"
+1505997022624	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:41563/login/"
+1505997022625	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:41563/login/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505997022752	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:41563/login/"
+1505997022772	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:41563/login/"
+1505997024606	Marionette	INFO	New connections will no longer be accepted
+[Child 16684] WARNING: pipe error (20): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 16684] WARNING: pipe error (3): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1505997189567	geckodriver	INFO	geckodriver 0.19.0
+1505997189572	geckodriver	INFO	Listening on 127.0.0.1:43337
+1505997190635	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.xdwlGNP5BDv6"
+1505997191016	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///usr/lib/firefox/omni.ja!/components/addonManager.js:65
+1505997191517	Marionette	INFO	Enabled via --marionette
+1505997193440	Marionette	INFO	Listening on port 44773
+1505997193645	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1505997193724	Marionette	DEBUG	loaded listener.js
+1505997193849	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1505997193876	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1505997193876	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505997194747	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:50175/login/"
+1505997195099	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:50175/login/"
+1505997195332	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:50175/login/"
+1505997195433	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:50175/login/"
+1505997195434	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:50175/login/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505997195553	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:50175/login/"
+1505997195572	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:50175/login/"
+1505997197292	Marionette	INFO	New connections will no longer be accepted
+[Child 17274] WARNING: pipe error (19): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 17274] WARNING: pipe error (3): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1505997241959	geckodriver	INFO	geckodriver 0.19.0
+1505997241965	geckodriver	INFO	Listening on 127.0.0.1:33693
+1505997243022	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.NKSivOz7dXaO"
+1505997243609	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///usr/lib/firefox/omni.ja!/components/addonManager.js:65
+1505997244086	Marionette	INFO	Enabled via --marionette
+1505997246012	Marionette	INFO	Listening on port 46033
+1505997246062	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1505997246127	Marionette	DEBUG	loaded listener.js
+1505997246360	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1505997246387	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1505997246388	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505997247328	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:33641/login/"
+1505997247570	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:33641/login/"
+1505997247814	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:33641/login/"
+1505997247906	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:33641/login/"
+1505997247907	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:33641/login/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1505997248004	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:33641/login/"
+1505997248023	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:33641/login/"
+1505997249805	Marionette	INFO	New connections will no longer be accepted
+[Child 17539] WARNING: pipe error (18): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 17539] WARNING: pipe error (3): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353

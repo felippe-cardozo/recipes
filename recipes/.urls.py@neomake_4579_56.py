@@ -22,8 +22,5 @@ urlpatterns = [
     url(r'^update/(?P<recipe_id>[0-9]+)/$', views.update, name='update'),
     url(r'^like/(?P<recipe_id>[0-9]+)/$', views.like, name='like'),
     url(r'^unlike/(?P<recipe_id>[0-9]+)/$', views.unlike, name='unlike'),
-    url(r'^add_to_cookbook/(?P<recipe_id>[0-9]+)/$', views.add_to_cookbook,
-        name='add_to_cookbook'),
-    url(r'^remove_from_cookbook/(?P<recipe_id>[0-9]+)/$',
-        views.remove_from_cookbook, name='remove_from_cookbook'),
+    url(r'^add_to_cookbook/(?P<recipe_id>[0-9]+)/$', views.add_to_cookbook)
 ]

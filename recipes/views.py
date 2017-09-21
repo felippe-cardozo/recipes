@@ -115,3 +115,19 @@ def unlike(request, recipe_id):
         recipe = Recipe.objects.get(pk=recipe_id)
         recipe.likes.remove(request.user)
     return redirect('detail', recipe_id=recipe_id)
+
+
+@login_required
+def add_to_cookbook(request, recipe_id):
+    if request.method == 'POST':
+        recipe = Recipe.objects.get(pk=recipe_id)
+        request.user.cookbook.add(recipe)
+    return redirect('detail', recipe_id=recipe_id)
+
+
+@login_required
+def remove_from_cookbook(request, recipe_id):
+    if request.method == 'POST':
+        recipe = Recipe.objects.get(pk=recipe_id)
+        request.user.cookbook.remove(recipe)
+    return redirect('detail', recipe_id=recipe_id)
