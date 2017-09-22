@@ -1,0 +1,74 @@
+[
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$BoMIS6L6FGlY$qRmULw55/y/1voHsXvS2uYbp2qHhqJtKu8YnnERQB3g=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "f",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-09-19T11:59:13.972Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$iUbrNsayeN06$M+zyDeMivFlpPy9AIPnEl6AhBAppoT3wmq/+w3ULxUw=",
+        "last_login": "2017-09-19T19:09:37.535Z",
+        "is_superuser": false,
+        "username": "fcc",
+        "first_name": "",
+        "last_name": "",
+        "email": "fcc.felippe@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-09-19T18:04:14.700Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$ZANKQ3cjdSxg$Onr0C0y5bXQVyoZ7u22rLLjHBH0czrN+kZfqk+jqd1I=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "x",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-09-19T18:05:06.215Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 6,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$57lBvrVKtku4$n5hzNIrXR1YYVVyciPH2XbynfCwXU00XBFoBmAMtsm4=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "m",
+        "first_name": "",
+        "last_name": "",
+        "email": "mmm@test.test.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-09-19T18:07:41.488Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]

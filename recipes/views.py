@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
+from django.http import HttpResponse
 from .forms import RecipeForm, IngredientFormSet, IngredientUpdateSet,\
                    UserForm, LoginForm
 from .models import Ingredient, Measure, Recipe
@@ -98,3 +99,35 @@ def detail(request, recipe_id):
     ingredients = [i for i in recipe.measure_set.all()]
     return render(request, 'recipes/detail.html', {'recipe': recipe,
                                                    'ingredients': ingredients})
+
+
+@login_required
+def like(request, recipe_id):
+    if request.method == 'POST':
+        recipe = Recipe.objects.get(pk=recipe_id)
+        recipe.likes.add(request.user)
+    return redirect('detail', recipe_id=recipe_id)
+
+
+@login_required
+def unlike(request, recipe_id):
+    if request.method == 'POST':
+        recipe = Recipe.objects.get(pk=recipe_id)
+        recipe.likes.remove(request.user)
+    return redirect('detail', recipe_id=recipe_id)
+
+
+@login_required
+def add_to_cookbook(request, recipe_id):
+    if request.method == 'POST':
+        recipe = Recipe.objects.get(pk=recipe_id)
+        request.user.cookbook.add(recipe)
+    return redirect('detail', recipe_id=recipe_id)
+
+
+@login_required
+def remove_from_cookbook(request, recipe_id):
+    if request.method == 'POST':
+        recipe = Recipe.objects.get(pk=recipe_id)
+        request.user.cookbook.remove(recipe)
+    return redirect('detail', recipe_id=recipe_id)
