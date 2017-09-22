@@ -197,4 +197,4 @@ class ViewsTest(TestCase):
         c = Client()
         c.login(username='f', password='password')
         c.post('/recipes/add_to_cookbook/' + str(self.recipe.id) + '/')
-        self.assertEqual(self.recipe.cookbook.count(), 1)
+        self.assertEqual(self.recipe.cookbook_users.count(), 1)
