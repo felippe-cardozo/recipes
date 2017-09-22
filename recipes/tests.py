@@ -198,3 +198,10 @@ class ViewsTest(TestCase):
         c.login(username='f', password='password')
         c.post('/recipes/add_to_cookbook/' + str(self.recipe.id) + '/')
         self.assertEqual(self.recipe.cookbook_users.count(), 1)
+
+    def test_mycookbook(self):
+        c = Client()
+        c.login(username='f', password='password')
+        user = User.objects.get(username='f')
+        response = c.get('/recipes/mycookbook/' + str(user.pk))
+        self.assertEqual(response.status_code, 200)

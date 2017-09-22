@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
-from django.http import HttpResponse
 from .forms import RecipeForm, IngredientFormSet, IngredientUpdateSet,\
                    UserForm, LoginForm
 from .models import Ingredient, Measure, Recipe
@@ -131,3 +130,4 @@ def remove_from_cookbook(request, recipe_id):
         recipe = Recipe.objects.get(pk=recipe_id)
         request.user.cookbook.remove(recipe)
     return redirect('detail', recipe_id=recipe_id)
+

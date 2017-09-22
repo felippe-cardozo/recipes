@@ -66,5 +66,6 @@ class MySeleniumTests(StaticLiveServerTestCase):
         details[0].click()
         add_to_cookbook = self.selenium.find_elements_by_id('add_cookbook')
         add_to_cookbook[0].click()
-        remove_from_cookbook = self.selenium.find_elements_by_id('remove_cookbook')
+        remove_from_cookbook = self.selenium.find_elements_by_id(
+                'remove_cookbook')
         self.assertTrue(remove_from_cookbook)
