@@ -40,8 +40,10 @@ def register(request):
 
 def index(request):
     recipes = Recipe.objects.all()[:10]
-    measures = [(recipe, recipe.measure_set.all()) for recipe in recipes]
-    return render(request, 'recipes/index.html', {'measures': measures})
+    recipe_col = [{'recipe': recipe, 'ingredients': recipe.measure_set.all()}
+                  for recipe in recipes]
+    return render(request, 'recipes/index.html', {'recipe_col': recipe_col,
+                                                  'title': 'Index'})
 
 
 @login_required
@@ -131,3 +133,16 @@ def remove_from_cookbook(request, recipe_id):
         request.user.cookbook.remove(recipe)
     return redirect('detail', recipe_id=recipe_id)
 
+
+@login_required
+def mycookbook(request):
+    recipes = request.user.cookbook.all()
+    recipe_col = [{'recipe': recipe, 'ingredients': recipe.measure_set.all()}
+                  for recipe in recipes]
+    return render(request, 'recipes/index.html', {'recipe_col': recipe_col,
+                                                  'title': 'MyCookBook'})
+
+
+def results(request):
+    q = request.GET['q']
+    ,

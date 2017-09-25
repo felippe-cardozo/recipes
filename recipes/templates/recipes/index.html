@@ -1,23 +1,23 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block title %}
-Index
+{{ title }}
 {% endblock %}
 {% block body %}
-                
+<h2>{{ title }}</h2> 
 
-                        {% if measures %}
-                        {% for m in measures %}
+                        {% if recipe_col %}
+                        {% for r in recipe_col %}
                         <div class="jumbotron">
-                                <p> <h2>{{ m.0.title }}</h2> </p>
-                        <p>  {{ m.0.description }} </p>
+                                <p> <h2>{{ r.recipe.title }}</h2> </p>
+                        <p>  {{ r.recipe.description }} </p>
                         <p> Ingredientes: </p> 
-                        {% for i in m.1 %}
-                        <p>  {{ i.ingredient.name }} 
+                        {% for i in r.ingredients %}
+                        <p>  {{ i.ingredient.name }}:
                         {{ i.measure }} </p>
                           {% endfor %}
                           <div class='recipe-url'>
-                          <a href="{% url 'detail' m.0.id%}">View More</a>
+                          <a href="{% url 'detail' r.recipe.id %}">View More</a>
                           </div>
                         </div>
                         {% endfor %}
