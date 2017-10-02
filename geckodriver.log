@@ -676,3 +676,86 @@ JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.mi
 1506026019966	Marionette	INFO	New connections will no longer be accepted
 [Child 12216] WARNING: pipe error (20): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
 [Child 12216] WARNING: pipe error (3): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1506538320303	geckodriver	INFO	geckodriver 0.19.0
+1506538320367	geckodriver	INFO	Listening on 127.0.0.1:34945
+1506538322213	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.17O10w8025ZC"
+1506538324479	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///usr/lib/firefox/omni.ja!/components/addonManager.js:65
+1506538326133	Marionette	INFO	Enabled via --marionette
+1506538329358	Marionette	INFO	Listening on port 40463
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1506538329564	Marionette	WARN	TLS certificate errors will be ignored for this session
+1506538329634	Marionette	DEBUG	loaded listener.js
+1506538329860	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1506538330007	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1506538330007	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1506538330924	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:43131/login/"
+1506538331868	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:43131/login/"
+1506538332106	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:43131/login/"
+1506538332280	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:43131/login/"
+1506538332281	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:43131/login/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1506538332380	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:43131/recipes/"
+1506538332396	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:43131/recipes/"
+1506538332466	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:43131/recipes/"
+1506538332506	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:43131/recipes/"
+1506538332506	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:43131/recipes/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1506538332661	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:43131/recipes/2/"
+1506538332663	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:43131/recipes/2/"
+1506538332931	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1506538335093	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:43131/recipes/2/"
+1506538335117	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:43131/recipes/2/"
+1506538335118	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:43131/recipes/2/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1506538335229	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:43131/login/"
+1506538335244	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:43131/login/"
+1506538335389	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:43131/login/"
+1506538335534	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:43131/login/"
+1506538335534	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:43131/login/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1506538335627	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:43131/recipes/"
+1506538335641	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:43131/recipes/"
+1506538335733	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:43131/recipes/"
+1506538335772	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:43131/recipes/"
+1506538335772	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:43131/recipes/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1506538335921	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:43131/recipes/4/"
+1506538335924	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:43131/recipes/4/"
+1506538336231	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1506538336479	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1506538338359	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:43131/recipes/4/"
+1506538338380	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:43131/recipes/4/"
+1506538338380	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:43131/recipes/4/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1506538338481	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:43131/login/"
+1506538338502	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:43131/login/"
+1506538338678	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:43131/login/"
+1506538338810	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:43131/login/"
+1506538338810	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:43131/login/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1506538338918	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:43131/recipes/"
+1506538338920	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:43131/recipes/"
+1506538340785	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:43131/recipes/"
+1506538340826	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:43131/recipes/"
+1506538340826	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:43131/recipes/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1506538340918	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:43131/recipes/"
+1506538340932	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:43131/recipes/"
+1506538341023	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:43131/recipes/"
+1506538341049	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:43131/recipes/"
+1506538341050	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:43131/recipes/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1506538341200	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:43131/recipes/2/"
+1506538341202	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:43131/recipes/2/"
+1506538341292	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:43131/recipes/2/"
+1506538341430	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:43131/recipes/2/"
+1506538341431	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:43131/recipes/2/"
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1506538341703	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:43131/recipes/update/2/"
+1506538341707	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:43131/recipes/update/2/"
+1506538341978	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+1506538344318	Marionette	INFO	New connections will no longer be accepted
+[Child 5026] WARNING: pipe error (19): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 5026] WARNING: pipe error (3): Connection reset by peer: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353

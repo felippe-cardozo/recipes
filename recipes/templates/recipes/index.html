@@ -6,22 +6,24 @@
 {% block body %}
 <h2>{{ title }}</h2> 
 
-                        {% if recipe_col %}
-                        {% for r in recipe_col %}
-                        <div class="jumbotron">
-                                <p> <h2>{{ r.recipe.title }}</h2> </p>
-                        <p>  {{ r.recipe.description }} </p>
-                        <p> Ingredientes: </p> 
-                        {% for i in r.ingredients %}
-                        <p>  {{ i.ingredient.name }}:
-                        {{ i.measure }} </p>
-                          {% endfor %}
-                          <div class='recipe-url'>
-                          <a href="{% url 'detail' r.recipe.id %}">View More</a>
-                          </div>
-                        </div>
+<form action="{% url 'index'  %}" method="get" accept-charset="utf-8">
+        <input class='form-control' type="text" name="q" placeholder="find recipes!">
+        <button class='btn' style='display: none' type='submit'>find</button>
+        
+</form>
+
+        {% if recipes %}
+        {% for r in recipes %}
+        <a href="{% url 'detail' r.id %}">
+                <div class="jumbotron">
+                        <p> <h2>{{r.source.title}}</h2></p>
+                        <p><h3>{{ r.source.description }}</h3></p>
+                        <p>Ingredientes: </p>
+                        {% for i in r.source.ingredients %}
+                        <p><h6>{{i.name}}: {{i.measure}}</h5></p>
                         {% endfor %}
-                          {% else %}
-                          EMPTY 
-                          {% endif %}
+                        </div></a>
+                        {% endfor %}
+                        {% endif %}
+
   {% endblock %}

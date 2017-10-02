@@ -202,6 +202,11 @@ class ViewsTest(TestCase):
     def test_mycookbook(self):
         c = Client()
         c.login(username='f', password='password')
-        user = User.objects.get(username='f')
-        response = c.get('/recipes/mycookbook/' + str(user.pk))
+        response = c.get('/recipes/mycookbook')
+        self.assertEqual(response.status_code, 200)
+
+    def test_search_view(self):
+        c = Client()
+        q = 'cenoura'
+        response = c.get('/recipes/', {'q': q})
         self.assertEqual(response.status_code, 200)

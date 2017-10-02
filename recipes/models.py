@@ -2,6 +2,9 @@ from django.db import models
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.models import User
 from django.utils import timezone
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from .search import RecipeIndex
 
 
 class Ingredient(models.Model):
@@ -29,7 +32,7 @@ class Recipe(models.Model):
             self.updated_at = timezone.now()
         else:
             self.created_at = timezone.now()
-            super(Recipe, self).save()
+        super(Recipe, self).save()
 
     def gen_initial_form_data(self):
         initial = [{'name': i.ingredient.name,
@@ -60,6 +63,24 @@ class Recipe(models.Model):
             ingredient = Ingredient.objects.get(name=i)
             self.measure_set.get(ingredient=ingredient).delete()
 
+    def list_ingredients(self):
+        return [{'name': m.ingredient.name, 'measure': m.measure}
+                for m in self.measure_set.all()]
+
+    def indexing(self):
+        obj = RecipeIndex(
+                meta={'id': self.id},
+                author=self.author.username,
+                likes=self.likes.count(),
+                title=self.title,
+                description=self.description,
+                ingredients=self.list_ingredients(),
+                created_at=self.created_at,
+                updated_at=self.updated_at
+                )
+        obj.save()
+        return obj.to_dict(include_meta=True)
+
 
 class Measure(models.Model):
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
@@ -68,3 +89,8 @@ class Measure(models.Model):
 
     def __str__(self):
         return f'{self.recipe.title} | {self.ingredient.name} : {self.measure}'
+
+
+@receiver(post_save, sender=Recipe)
+def index_recipe(sender, instance, **kwargs):
+    instance.indexing()

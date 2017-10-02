@@ -27,5 +27,5 @@ urlpatterns = [
     url(r'^remove_from_cookbook/(?P<recipe_id>[0-9]+)/$',
         views.remove_from_cookbook, name='remove_from_cookbook'),
     url(r'^mycookbook$', views.mycookbook, name='mycookbook'),
-    url(r'results$', views.search, name='results'),
+    # url(r'results$', views.search, name='results'),
 ]

@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from .forms import RecipeForm, IngredientFormSet, IngredientUpdateSet,\
                    UserForm, LoginForm
 from .models import Ingredient, Measure, Recipe
+from .search import get_recipes_from_es
 
 
 @login_required
@@ -39,11 +40,17 @@ def register(request):
 
 
 def index(request):
-    recipes = Recipe.objects.all()[:10]
-    recipe_col = [{'recipe': recipe, 'ingredients': recipe.measure_set.all()}
-                  for recipe in recipes]
-    return render(request, 'recipes/index.html', {'recipe_col': recipe_col,
-                                                  'title': 'Index'})
+    q = request.META['QUERY_STRING']
+    if q:
+        recipes = get_recipes_from_es(q)
+        return render(request, 'recipes/index.html', {'q': q,
+                                                      'recipes': recipes})
+    return render(request, 'recipes/index.html', {'q': q})
+    # recipes = Recipe.objects.all()[:10]
+    # recipe_col = [{'recipe': recipe, 'ingredients': recipe.measure_set.all()}
+    #               for recipe in recipes]
+    # return render(request, 'recipes/index.html', {'recipe_col': recipe_col,
+    #                                               'title': 'Index'})
 
 
 @login_required
@@ -96,7 +103,7 @@ def update(request, recipe_id):
 
 
 def detail(request, recipe_id):
-    recipe = get_object_or_404(Recipe, pk=recipe_id)
+    recipe = get_object_or_404(Recipe, pk=int(recipe_id))
     ingredients = [i for i in recipe.measure_set.all()]
     return render(request, 'recipes/detail.html', {'recipe': recipe,
                                                    'ingredients': ingredients})
@@ -139,10 +146,10 @@ def mycookbook(request):
     recipes = request.user.cookbook.all()
     recipe_col = [{'recipe': recipe, 'ingredients': recipe.measure_set.all()}
                   for recipe in recipes]
-    return render(request, 'recipes/index.html', {'recipe_col': recipe_col,
-                                                  'title': 'MyCookBook'})
+    return render(request, 'recipes/cookbook.html', {'recipe_col': recipe_col,
+                                                     'title': 'MyCookBook'})
 
 
-def results(request):
-    q = request.GET['q']
-    ,
+# def results(request):
+#     q = request.GET['q']
+#     ,
