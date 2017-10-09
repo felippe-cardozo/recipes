@@ -1,13 +1,14 @@
 from elasticsearch_dsl.connections import connections
 from elasticsearch_dsl import DocType, Text, Date, String, Nested, Integer, \
-                              analyzer, tokenizer
+        Completion
 from elasticsearch.helpers import bulk
 from elasticsearch import Elasticsearch
 
 connections.create_connection(update_all_types=True)
 
-def comp_analyzer = analyzer('comp_analyzer',
-        tokenizer=tokenizer('gram', 'edge_ngram', min_gram=2, max_gram=15))
+# def comp_analyzer = analyzer('comp_analyzer',
+#         tokenizer=tokenizer('gram', 'edge_ngram', min_gram=2, max_gram=15))
+
 
 class RecipeIndex(DocType):
     author = String()
@@ -16,6 +17,7 @@ class RecipeIndex(DocType):
     description = Text()
     ingredients = Nested(properties={'name': String(),
                                      'measure': String()})
+    tags = Completion()
     created_at = Date()
     updated_at = Date()
 
@@ -44,7 +46,8 @@ def multi_search(text):
                      {'fields': ['title', 'description'],
                       'query': text, 'fuzziness': 1}}}
     body.extend([index, search_ings, index, search_recipe])
-    return es.msearch(body=body)
+    response = es.msearch(body=body)
+    return response
 
 
 def list_recipes(response):
@@ -52,7 +55,8 @@ def list_recipes(response):
     recipes = []
     for array in hits:
         for item in array:
-            recipes.append(item)
+            if item not in recipes:
+                recipes.append(item)
     return recipes
 
 
@@ -65,7 +69,6 @@ def get_recipes_from_es(q):
     response = multi_search(q)
     recipes = list_recipes(response)
     if recipes:
-        print('recipes loaded')
         recipes = sort_by_likes(recipes)
         # get rid of underscores
         for recipe in recipes:
@@ -73,3 +76,22 @@ def get_recipes_from_es(q):
             recipe['source'] = recipe.pop('_source')
         return recipes
     return None
+
+
+def suggestions(text, index='recipe_index'):
+    es = Elasticsearch()
+    body = {'suggest': {'recipe_index_suggest':
+                        {'text': text,
+                         'completion': {'field': 'tags'}}}}
+    return es.search(index=index, body=body)
+
+
+# takes suggestions object as input and returns a list of words
+def list_suggestions(suggestions):
+    options = suggestions['suggest']['recipe_index_suggest'][0]['options']
+    return list({i['text'] for i in options})
+
+
+def get_suggestions_from_es(q):
+    s = suggestions(q)
+    return list_suggestions(s)

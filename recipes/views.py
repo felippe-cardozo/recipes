@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
+from django.http import JsonResponse
 from .forms import RecipeForm, IngredientFormSet, IngredientUpdateSet,\
                    UserForm, LoginForm
 from .models import Ingredient, Measure, Recipe
-from .search import get_recipes_from_es
+from .search import get_recipes_from_es, get_suggestions_from_es
 
 
 @login_required
@@ -40,17 +41,11 @@ def register(request):
 
 
 def index(request):
-    q = request.META['QUERY_STRING']
+    q = request.GET.get("search")
     if q:
         recipes = get_recipes_from_es(q)
-        return render(request, 'recipes/index.html', {'q': q,
-                                                      'recipes': recipes})
-    return render(request, 'recipes/index.html', {'q': q})
-    # recipes = Recipe.objects.all()[:10]
-    # recipe_col = [{'recipe': recipe, 'ingredients': recipe.measure_set.all()}
-    #               for recipe in recipes]
-    # return render(request, 'recipes/index.html', {'recipe_col': recipe_col,
-    #                                               'title': 'Index'})
+        return render(request, 'recipes/index.html', {'recipes': recipes})
+    return render(request, 'recipes/index.html')
 
 
 @login_required
@@ -81,7 +76,6 @@ def update(request, recipe_id):
     if request.method == 'POST':
         form = RecipeForm(request.POST, instance=recipe)
         formset = IngredientUpdateSet(request.POST)
-        # if form.is_valid() and formset.is_valid():
         if form.is_valid():
             recipe = form.save()
             new_ingredients = {}
@@ -89,9 +83,6 @@ def update(request, recipe_id):
                 if f.is_valid():
                     new_ingredients[f.cleaned_data.get('name')] = \
                             f.cleaned_data.get('measure')
-            # new_ingredients = {i.cleaned_data.get('name'):
-            #                    i.cleaned_data.get('measure') for i in formset
-            #                    if i.cleaned_data.get('name')}
             if new_ingredients:
                 recipe.update_ingredients(new_ingredients)
             return redirect('detail', recipe_id=recipe.id)
@@ -150,6 +141,8 @@ def mycookbook(request):
                                                      'title': 'MyCookBook'})
 
 
-# def results(request):
-#     q = request.GET['q']
-#     ,
+def suggestions(request):
+    term = request.GET.get('term')
+    if term:
+        suggestions = get_suggestions_from_es(term)
+        return JsonResponse(suggestions, safe=False)
