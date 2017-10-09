@@ -67,6 +67,11 @@ class Recipe(models.Model):
         return [{'name': m.ingredient.name, 'measure': m.measure}
                 for m in self.measure_set.all()]
 
+    def gen_tags(self):
+        tags = [i.ingredient.name for i in self.measure_set.all()]
+        tags.append(self.title)
+        return tags
+
     def indexing(self):
         obj = RecipeIndex(
                 meta={'id': self.id},
@@ -75,6 +80,7 @@ class Recipe(models.Model):
                 title=self.title,
                 description=self.description,
                 ingredients=self.list_ingredients(),
+                tags=self.gen_tags(),
                 created_at=self.created_at,
                 updated_at=self.updated_at
                 )
