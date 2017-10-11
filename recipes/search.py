@@ -6,9 +6,6 @@ from elasticsearch import Elasticsearch
 
 connections.create_connection(update_all_types=True)
 
-# def comp_analyzer = analyzer('comp_analyzer',
-#         tokenizer=tokenizer('gram', 'edge_ngram', min_gram=2, max_gram=15))
-
 
 class RecipeIndex(DocType):
     author = String()
@@ -53,15 +50,18 @@ def multi_search(text):
 def list_recipes(response):
     hits = [i['hits']['hits'] for i in response['responses']]
     recipes = []
+    ids = []
     for array in hits:
         for item in array:
-            if item not in recipes:
+            if item['_id'] not in ids:
+                ids.append(item['_id'])
                 recipes.append(item)
     return recipes
 
 
 def sort_by_likes(recipe_list):
-    return sorted(recipe_list, key=lambda d: d['_source']['likes'],
+    return sorted(recipe_list, key=lambda d: (d['_score'],
+                                              d['_source']['likes']),
                   reverse=True)
 
 
