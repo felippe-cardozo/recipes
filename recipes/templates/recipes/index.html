@@ -15,14 +15,14 @@
         {% if recipes %}
         {% for r in recipes %}
         <a href="{% url 'detail' r.id %}">
+                        <p> <h2>{{r.source.title}}</h2></p></a>
                 <div class="jumbotron">
-                        <p> <h2>{{r.source.title}}</h2></p>
-                        <p><h3>{{ r.source.description }}</h3></p>
+                        <p><h4>{{ r.source.description }}</h4></p>
                         <p>Ingredientes: </p>
                         {% for i in r.source.ingredients %}
                         <p><h6>{{i.name}}: {{i.measure}}</h5></p>
                         {% endfor %}
-                        </div></a>
+                        </div>
                         {% endfor %}
                         {% endif %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
