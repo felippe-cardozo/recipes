@@ -5,6 +5,7 @@ from django.utils import timezone
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from .search import RecipeIndex
+from elasticsearch import Elasticsearch
 
 
 class Ingredient(models.Model):
@@ -73,6 +74,9 @@ class Recipe(models.Model):
         return tags
 
     def indexing(self):
+        es = Elasticsearch()
+        if es.exists('recipe_index', 'recipe_index', id=self.pk):
+            es.delete('recipe_index', 'recipe_index', id=self.pk)
         obj = RecipeIndex(
                 meta={'id': self.id},
                 author=self.author.username,

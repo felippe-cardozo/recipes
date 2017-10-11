@@ -66,6 +66,7 @@ def new(request):
                 ingredient = Ingredient.objects.get_or_create(name=name)[0]
                 Measure.objects.create(ingredient=ingredient,
                                        recipe=recipe, measure=measure)
+            recipe.indexing()
             return redirect('index')
     return render(request, 'recipes/new.html', {'form': form,
                                                 'formset': formset})
@@ -85,6 +86,7 @@ def update(request, recipe_id):
                             f.cleaned_data.get('measure')
             if new_ingredients:
                 recipe.update_ingredients(new_ingredients)
+            recipe.update_index()
             return redirect('detail', recipe_id=recipe.id)
     form = RecipeForm(instance=recipe)
     initial_data = recipe.gen_initial_form_data()
