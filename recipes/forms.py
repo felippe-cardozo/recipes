@@ -2,17 +2,22 @@ from django import forms
 from django.forms import formset_factory
 from django.contrib.auth.models import User
 from .models import Recipe
+from django.utils.translation import ugettext_lazy as _
 
 
 class RecipeForm(forms.ModelForm):
     class Meta:
         model = Recipe
-        fields = ['title', 'description']
+        fields = ['title', 'description', 'procedures', 'image']
+        labels = {'title': _('Título'),
+                  'description': _('Descrição'),
+                  'procedures': _('Modo de preparo'),
+                  'image': _('Imagem')}
 
 
 class IngredientForm(forms.Form):
-    name = forms.CharField(max_length=120)
-    measure = forms.CharField(max_length=120)
+    name = forms.CharField(max_length=120, label='Ingrediente')
+    measure = forms.CharField(max_length=120, label='Medida')
 
 
 class UserForm(forms.ModelForm):

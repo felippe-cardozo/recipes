@@ -1,32 +1,94 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block title %}
-{{ title }}
+Index
 {% endblock %}
 {% block body %}
-<h2>{{ title }}</h2> 
 
+        <div class="row">
+                <div class="col-sm-4">
 <form action="{% url 'index'  %}" method="get" accept-charset="utf-8">
         <input class='form-control' type="text" name="search" placeholder="find recipes!" id='search'>
-        <button class='btn' style='display: none' type='submit'>find</button>
+                </div>
+        <div class='col-sm-2'>
+        <button class='btn' style='' type='submit'>find</button>
+        <!-- <input type="image" src="/media/search.png" width='22' height='22' /> -->
+        </div>
         
 </form>
+        </div>
+        <br />
+        
 
         {% if recipes %}
         {% for r in recipes %}
-        <a href="{% url 'detail' r.id %}">
-                        <p> <h2>{{r.source.title}}</h2></p></a>
                 <div class="jumbotron">
-                        <p><h4>{{ r.source.description }}</h4></p>
+        <div class='row'> 
+                <div class='col-sm-12'>
+                        <!-- <p> <h2>{{r.source.title}}</h2></p> -->
+                        <h2><a class='title' href="{% url 'detail' r.id %}">{{r.source.title}}</a></h2>
+                </div>
+        </div>
+        
+                        <div class='row'>
+                                <div class='col-sm-6'>
+                                        <p>{{ r.source.description }}</p>
+                        <img src="{{r.source.image}}" alt="{{recipe.title}}" style="width:304px;height:228px;">
+                                </div>
+                                <div class='col-sm-6'>
                         <p>Ingredientes: </p>
                         {% for i in r.source.ingredients %}
                         <p><h6>{{i.name}}: {{i.measure}}</h5></p>
                         {% endfor %}
                         </div>
+                        </div>
+                        <strong id="{{r.id}}">{{ r.source.likes }}</strong> likes
+  {% if user.is_authenticated %}
+          
+     {% load user_tag %}
+      {% user_likes user r.id as user_liked_recipe %}
+      {% if user_liked_recipe %}
+      <button style='display: none;' class="like btn btn-sm" id="like_{{r.id}}"
+              data-rid="{{ r.id }}" data-count="{{ r.source.likes }}"
+              title='like this recipe' type="button"> Like </button>
+      <button id='unlike_{{r.id}}' class="unlike btn btn-primary btn-sm"
+              data-rid="{{r.id}}"  data-count="{{ r.source.likes }}"
+              type="button" title='remove like'> Like </button>
+      {% else %}
+      <button id="like_{{r.id}}" class="like btn-sm" data-rid="{{ r.id }}"
+              data-count="{{ r.source.likes }}" type="button"> Like </button>
+      <button style='display: none;' class="unlike btn btn-primary btn-sm"
+              id='unlike_{{r.id}}'
+              data-rid="{{r.id}}" data-count="{{ r.source.likes }}"
+              type="button"> Like </button>
+          {% endif %}
+     {% user_cookbook user r.id as recipe_in_user_cookbook %}
+     {% if recipe_in_user_cookbook %}
+     <button id='remove_cookbook_{{r.id}}' 
+             class="remove_cookbook btn btn-sm btn-primary" 
+             data-rid="{{ r.id }}" type="button" 
+             title='Remove from your cookbook'>MyCookBook</button>
+     <button id='add_cookbook_{{r.id}}' style='display: none;' 
+             class="add_cookbook btn btn-sm" 
+             data-rid="{{ r.id }}"
+             type="button" title='Add to your cookbook'>MyCookBook</button>
+     {% else %}
+
+     <button id='remove_cookbook_{{r.id}}' style='display: none;'
+             class="remove_cookbook btn btn-sm btn-primary"
+             data-rid="{{ r.id }}"
+             type="button" title='Remove from your cookbook'>MyCookBook</button>
+     <button id='add_cookbook_{{r.id}}' class="add_cookbook btn btn-sm"
+             data-rid="{{ r.id }}"
+             type="button" title='Add to your cookbook'>MyCookBook</button>
+          {% endif %}
+  {% endif %}
+                </div>
                         {% endfor %}
                         {% endif %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src={% static 'recipes/autocomplete.js' %}></script>
+<script src={% static 'recipes/likes_index.js' %}></script>
 
   {% endblock %}

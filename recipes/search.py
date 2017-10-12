@@ -14,6 +14,7 @@ class RecipeIndex(DocType):
     description = Text()
     ingredients = Nested(properties={'name': String(),
                                      'measure': String()})
+    image = String()
     tags = Completion()
     created_at = Date()
     updated_at = Date()
@@ -23,9 +24,11 @@ class RecipeIndex(DocType):
 
 
 def bulk_indexing():
+    es = Elasticsearch()
+    if es.indices.exists(index='recipe_index'):
+        es.indices.delete(index='recipe_index')
     from .models import Recipe
     RecipeIndex.init()
-    es = Elasticsearch()
     bulk(client=es, actions=(b.indexing() for b in
                              Recipe.objects.all().iterator()))
 

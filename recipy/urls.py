@@ -26,4 +26,5 @@ urlpatterns = [
     url(r'^registration/$', register, name='registration'),
     url(r'^login/$', log_in, name='login'),
     url(r'^logout/$', log_out, name='logout'),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + \
+        static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

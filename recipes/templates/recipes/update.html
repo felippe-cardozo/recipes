@@ -6,11 +6,12 @@ Change
 {% block body %}
 <form action="" method="post" accept-charset="utf-8">
                                 {% csrf_token %}
-                                {{ form.as_p }}
+                                {% load bootstrap %}
+                                {{ form|bootstrap }}
                                 {{ formset.management_form }}
                                 {% for f in formset %}
                                 <div class='ingredient'>
-                                {{ f.as_p }}
+                                {{ f|bootstrap }}
                                 </div>
                                 {% endfor %}
                                 <p>

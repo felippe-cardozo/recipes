@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'recipes',
     'bootstrap3',
+    'bootstrapform',
 ]
 
 MIDDLEWARE = [
@@ -71,7 +72,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'recipy.wsgi.application'
 
-BOOTSTRAP3 = {'theme_url': '/static/css/space.css', }
+BOOTSTRAP3 = {'theme_url': '/static/css/recipes.css', }
 
 
 # Database
@@ -128,3 +129,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"), ]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
