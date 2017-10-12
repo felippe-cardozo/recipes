@@ -20,6 +20,9 @@ class Recipe(models.Model):
     likes = models.ManyToManyField(User, related_name='user_likes')
     cookbook_users = models.ManyToManyField(User, related_name='cookbook')
     title = models.CharField(max_length=120)
+    procedures = models.TextField()
+    image = models.ImageField(blank=True, null=True,
+                              upload_to='uploads/%Y/%m/%d')
     description = models.TextField()
     ingredients = models.ManyToManyField(Ingredient, through='Measure')
     created_at = models.DateTimeField(default=timezone.now)
@@ -73,6 +76,10 @@ class Recipe(models.Model):
         tags.append(self.title)
         return tags
 
+    def get_image_url(self):
+        if self.image:
+            return self.image.url
+
     def indexing(self):
         es = Elasticsearch()
         if es.exists('recipe_index', 'recipe_index', id=self.pk):
@@ -82,6 +89,7 @@ class Recipe(models.Model):
                 author=self.author.username,
                 likes=self.likes.count(),
                 title=self.title,
+                image=self.get_image_url(),
                 description=self.description,
                 ingredients=self.list_ingredients(),
                 tags=self.gen_tags(),

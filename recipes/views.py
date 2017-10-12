@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from .forms import RecipeForm, IngredientFormSet, IngredientUpdateSet,\
                    UserForm, LoginForm
 from .models import Ingredient, Measure, Recipe
@@ -53,7 +53,7 @@ def new(request):
     form = RecipeForm()
     formset = IngredientFormSet()
     if request.method == 'POST':
-        form = RecipeForm(request.POST)
+        form = RecipeForm(request.POST, request.FILES)
         formset = IngredientFormSet(request.POST)
         if form.is_valid() and formset.is_valid():
             recipe = form.save(commit=False)
@@ -63,9 +63,10 @@ def new(request):
             for form in formset:
                 name = form.cleaned_data.get('name')
                 measure = form.cleaned_data.get('measure')
-                ingredient = Ingredient.objects.get_or_create(name=name)[0]
-                Measure.objects.create(ingredient=ingredient,
-                                       recipe=recipe, measure=measure)
+                if name:
+                    ingredient = Ingredient.objects.get_or_create(name=name)[0]
+                    Measure.objects.create(ingredient=ingredient,
+                                           recipe=recipe, measure=measure)
             recipe.indexing()
             return redirect('index')
     return render(request, 'recipes/new.html', {'form': form,
@@ -107,6 +108,8 @@ def like(request, recipe_id):
     if request.method == 'POST':
         recipe = Recipe.objects.get(pk=recipe_id)
         recipe.likes.add(request.user)
+        recipe.indexing()
+        return HttpResponse('success')
     return redirect('detail', recipe_id=recipe_id)
 
 
@@ -115,6 +118,8 @@ def unlike(request, recipe_id):
     if request.method == 'POST':
         recipe = Recipe.objects.get(pk=recipe_id)
         recipe.likes.remove(request.user)
+        recipe.indexing()
+        return HttpResponse('success')
     return redirect('detail', recipe_id=recipe_id)
 
 
@@ -123,6 +128,7 @@ def add_to_cookbook(request, recipe_id):
     if request.method == 'POST':
         recipe = Recipe.objects.get(pk=recipe_id)
         request.user.cookbook.add(recipe)
+        return HttpResponse('success')
     return redirect('detail', recipe_id=recipe_id)
 
 
@@ -131,6 +137,7 @@ def remove_from_cookbook(request, recipe_id):
     if request.method == 'POST':
         recipe = Recipe.objects.get(pk=recipe_id)
         request.user.cookbook.remove(recipe)
+        return HttpResponse('success')
     return redirect('detail', recipe_id=recipe_id)
 
 

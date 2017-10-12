@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700");
+
+html {
+  font-family: monospace;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: monospace;
+  font-size: 12px;
+  line-height: 1.42857143;
+  color: #666666;
+  background-color: #ffffff;
+}
+
+a {
+  color: #0084b4;
+  text-decoration: none;
+  }
+
+a.title:link {color:#555555;}
+a.title:visited {color:#0084b4;}
+a.title:hover {color:#00aced;}
+

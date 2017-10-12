@@ -36,7 +36,9 @@
 </div>
 <p>
   <a href="{% url 'index' %}">Index</a>
+  {% if user == recipe.author %}
   <a href="{% url 'update' recipe.id %}">Update</a>
+  {% endif %}
 </p>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src={% static 'recipes/likes.js' %}></script>

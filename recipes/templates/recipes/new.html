@@ -3,6 +3,7 @@
 Create
 {% endblock %}
 {% load staticfiles %}
+{% load static %}
 {% block body %}
 {{ formset.management_form }}
 {% if formset.non_form_errors %}
@@ -24,13 +25,14 @@ Create
     {% endfor %}
     {% endif %}
     {% endfor %}
-                        <form action="" method="post" accept-charset="utf-8">
+                        <form action="" method="post" accept-charset="utf-8" enctype='multipart/form-data'>
                                 {% csrf_token %}
-                                {{ form.as_p }}
+                                {% load bootstrap %}
+                                {{ form|bootstrap }}
                                 {{ formset.management_form }}
                                 {% for f in formset %}
                                 <div class='ingredient'>
-                                {{ f.as_p }}
+                                {{ f|bootstrap }}
                                 </div>
                                 {% endfor %}
                                 <p>
@@ -45,7 +47,7 @@ Create
 <!-- remember to set the prefix (defaults to the relationship field name), otherwise the new and old fields overlap each other -->
 <script type="text/javascript">
     $(function() {
-            $('.ingredient').formset({addText: '+ ingredientes', deleteText: 'x'});
+            $('.ingredient').formset({addText: 'adicionar mais ingredientes', deleteText: 'remover'});
     })
 </script>
 {% endblock %}
