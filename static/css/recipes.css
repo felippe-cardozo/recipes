@@ -23,3 +23,7 @@ a.title:link {color:#555555;}
 a.title:visited {color:#0084b4;}
 a.title:hover {color:#00aced;}
 
+h1, h2, h3, h4, h5, h6 {
+        text-align: justify;
+        text-justify: inter-word;
+}

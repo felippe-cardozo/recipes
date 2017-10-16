@@ -3,9 +3,7 @@
 Create
 {% endblock %}
 {% load staticfiles %}
-{% load static %}
 {% block body %}
-{{ formset.management_form }}
 {% if formset.non_form_errors %}
         {{ formset.non_form_errors }}
 {% endif %}

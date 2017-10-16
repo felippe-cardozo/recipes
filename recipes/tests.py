@@ -2,9 +2,20 @@ from django.test import TestCase, Client
 from django.contrib.auth.models import User
 from recipes.models import Recipe, Ingredient, Measure
 from recipes.forms import RecipeForm, IngredientFormSet
+import mock
+
+
+def mock_indexing(*args):
+    pass
+
+
+def mock_es_delete(*args):
+    pass
 
 
 class RecipeModelTest(TestCase):
+    @mock.patch('recipes.models.Recipe.indexing',
+                new=mock_indexing)
     def setUp(self):
         self.user = User.objects.create(username='user', password='password')
         self.lasanha = Recipe(title='lasanha', description='placeholder',
@@ -14,11 +25,15 @@ class RecipeModelTest(TestCase):
         self.batata = Ingredient(name='batata')
         self.molho = Ingredient(name='molho')
 
+    @mock.patch('recipes.models.Recipe.indexing',
+                new=mock_indexing)
     def test_recipe_is_saved(self):
         self.lasanha.save()
         self.macarrao.save()
         self.assertEqual('lasanha', Recipe.objects.all()[0].title)
 
+    @mock.patch('recipes.models.Recipe.indexing',
+                new=mock_indexing)
     def test_update_ingredients_method(self):
         self.lasanha.save()
         self.batata.save()
@@ -59,6 +74,8 @@ class MeasureRelationTest(TestCase):
                               author=self.user)
         self.batata = Ingredient(name='batata')
 
+    @mock.patch('recipes.models.Recipe.indexing',
+                new=mock_indexing)
     def test_create_association(self):
         self.lasanha.save()
         self.batata.save()
@@ -72,7 +89,8 @@ class MeasureRelationTest(TestCase):
 
 class RecipeFormTest(TestCase):
     def setUp(self):
-        self.data = {'title': 'lasanha', 'description': 'placeholder'}
+        self.data = {'title': 'lasanha', 'description': 'placeholder',
+                     'procedures': 'placeholder'}
 
     def test_form_is_valid(self):
         form = RecipeForm(data=self.data)
@@ -111,6 +129,8 @@ class ViewsTest(TestCase):
 
     fixtures = ['users.json']
 
+    @mock.patch('recipes.models.Recipe.indexing',
+                new=mock_indexing)
     def setUp(self):
         self.user = User.objects.create_user(username='user',
                                              password='password')
@@ -120,6 +140,7 @@ class ViewsTest(TestCase):
         self.data = {
                      'title': 'Test',
                      'description': 'desc',
+                     'procedures': 'proc',
                      'form-TOTAL_FORMS': '2',
                      'form-INITIAL_FORMS': '0',
                      'form-MAX_NUM_FORMS': '',
@@ -128,6 +149,10 @@ class ViewsTest(TestCase):
                      'form-1-name': 'banana',
                      'form-1-measure': '2 kilos'}
 
+    @mock.patch('recipes.models.Recipe.indexing',
+                new=mock_indexing)
+    @mock.patch('recipes.models.Recipe.es_delete',
+                new=mock_es_delete)
     def test_post_new_recipe_with_ingredients(self):
         c = Client()
         c.login(username='user', password='password')
@@ -141,6 +166,10 @@ class ViewsTest(TestCase):
         assoc = Measure.objects.get(ingredient=ingredient, recipe=recipe)
         self.assertEqual(assoc.measure, '1 kilo')
 
+    @mock.patch('recipes.models.Recipe.indexing',
+                new=mock_indexing)
+    @mock.patch('recipes.models.Recipe.es_delete',
+                new=mock_es_delete)
     def test_update_recipe(self):
         c = Client()
         recipe = Recipe.objects.create(title='test', description='test',
@@ -164,6 +193,10 @@ class ViewsTest(TestCase):
         response = c.get('/recipes/')
         self.assertEqual(response.status_code, 200)
 
+    @mock.patch('recipes.models.Recipe.indexing',
+                new=mock_indexing)
+    @mock.patch('recipes.models.Recipe.es_delete',
+                new=mock_es_delete)
     def test_detail_view(self):
         recipe = Recipe.objects.create(title='test', description='test',
                                        author=self.user)
@@ -185,6 +218,10 @@ class ViewsTest(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertEqual(User.objects.last().username, 'testuser')
 
+    @mock.patch('recipes.models.Recipe.indexing',
+                new=mock_indexing)
+    @mock.patch('recipes.models.Recipe.es_delete',
+                new=mock_es_delete)
     def test_like_and_unlike_view(self):
         c = Client()
         c.login(username='f', password='password')

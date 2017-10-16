@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block title %}
-Index
+{{user.username}}'s CookBook
 {% endblock %}
 {% block body %}
 
@@ -12,7 +12,6 @@ Index
                 </div>
         <div class='col-sm-2'>
         <button class='btn' style='' type='submit'>find</button>
-        <!-- <input type="image" src="/media/search.png" width='22' height='22' /> -->
         </div>
         
 </form>
@@ -25,69 +24,69 @@ Index
                 <div class="jumbotron">
         <div class='row'> 
                 <div class='col-sm-12'>
-                        <h2><a class='title' href="{% url 'detail' r.id %}">{{r.source.title}}</a></h2>
+                        <h2><a class='title' href="{% url 'detail' r.recipe.id %}">{{r.recipe.title}}</a></h2>
                 </div>
         </div>
         <br />
         <br />
         
+        
                         <div class='row'>
+                                {% if r.recipe.image %}
                                 <div class='col-sm-6'>
-                                        <a href="{{r.source.image}}" target="_blank">
-                        <img src="{{r.source.image}}" alt="{{recipe.title}}" class='img-responsive'></a>
+                                        <a href="{{r.recipe.image.url}}" target="_blank">
+                        <img src="{{r.recipe.image.url}}" alt="{{r.recipe.title}}" class='img-responsive'></a>
         <br />
         <br />
-                                        <p><h6 style='text-align:justify;text-justify:inter-word;'>{{ r.source.description }}</h6></p>
+        {% endif %}
+                                        <p><h6 style='text-align:justify;text-justify:inter-word;'>{{ r.recipe.description }}</h6></p>
                                 </div>
                                 <div class='col-sm-1'>
                                 </div>
                                 <div class='col-sm-5'>
                         <p>Ingredientes: </p>
-                        {% for i in r.source.ingredients %}
-                        <h6>{{i.name}}: {{i.measure}}</h6>
+                        {% for i in r.ingredients %}
+                        <p><h6>{{i.ingredient.name}}: {{i.measure}}</h5></p>
                         {% endfor %}
                         </div>
                         </div>
         <br />
         <br />
-                        <strong id="{{r.id}}">{{ r.source.likes }}</strong> likes
+                        <strong id="{{r.recipe.id}}">{{ r.recipe.likes.count }}</strong> likes
   {% if user.is_authenticated %}
           
-     {% load user_tag %}
-      {% user_likes user r.id as user_liked_recipe %}
-      {% if user_liked_recipe %}
+      {% if user in r.recipe.likes.all %}
       <button style='display: none;' class="like btn btn-sm" id="like_{{r.id}}"
-              data-rid="{{ r.id }}" data-count="{{ r.source.likes }}"
+              data-rid="{{ r.recipe.id }}" data-count="{{ r.recipe.likes.count }}"
               title='like this recipe' type="button"> Like </button>
-      <button id='unlike_{{r.id}}' class="unlike btn btn-primary btn-sm"
-              data-rid="{{r.id}}"  data-count="{{ r.source.likes }}"
+      <button id='unlike_{{r.recipe.id}}' class="unlike btn btn-primary btn-sm"
+              data-rid="{{r.recipe.id}}"  data-count="{{ r.recipe.likes.count }}"
               type="button" title='remove like'> Like </button>
       {% else %}
-      <button id="like_{{r.id}}" class="like btn btn-sm" data-rid="{{ r.id }}"
-              data-count="{{ r.source.likes }}" type="button"> Like </button>
+      <button id="like_{{r.recipe.id}}" class="like btn btn-sm" data-rid="{{ r.recipe.id }}"
+              data-count="{{ r.recipe.likes.count }}" type="button"> Like </button>
       <button style='display: none;' class="unlike btn btn-primary btn-sm"
-              id='unlike_{{r.id}}'
-              data-rid="{{r.id}}" data-count="{{ r.source.likes }}"
+              id='unlike_{{r.recipe.id}}'
+              data-rid="{{r.recipe.id}}" data-count="{{ r.recipe.likes.count }}"
               type="button"> Like </button>
           {% endif %}
-     {% user_cookbook user r.id as recipe_in_user_cookbook %}
-     {% if recipe_in_user_cookbook %}
-     <button id='remove_cookbook_{{r.id}}' 
+     {% if r.recipe in user.cookbooks.all %}
+     <button id='remove_cookbook_{{r.recipe.id}}' 
              class="remove_cookbook btn btn-sm btn-primary" 
-             data-rid="{{ r.id }}" type="button" 
+             data-rid="{{ r.recipe.id }}" type="button" 
              title='Remove from your cookbook'>MyCookBook</button>
-     <button id='add_cookbook_{{r.id}}' style='display: none;' 
+     <button id='add_cookbook_{{r.recipe.id}}' style='display: none;' 
              class="add_cookbook btn btn-sm" 
-             data-rid="{{ r.id }}"
+             data-rid="{{ r.recipe.id }}"
              type="button" title='Add to your cookbook'>MyCookBook</button>
      {% else %}
 
-     <button id='remove_cookbook_{{r.id}}' style='display: none;'
+     <button id='remove_cookbook_{{r.recipe.id}}' style='display: none;'
              class="remove_cookbook btn btn-sm btn-primary"
-             data-rid="{{ r.id }}"
+             data-rid="{{ r.recipe.id }}"
              type="button" title='Remove from your cookbook'>MyCookBook</button>
-     <button id='add_cookbook_{{r.id}}' class="add_cookbook btn btn-sm"
-             data-rid="{{ r.id }}"
+     <button id='add_cookbook_{{r.recipe.id}}' class="add_cookbook btn btn-sm"
+             data-rid="{{ r.recipe.id }}"
              type="button" title='Add to your cookbook'>MyCookBook</button>
           {% endif %}
   {% endif %}

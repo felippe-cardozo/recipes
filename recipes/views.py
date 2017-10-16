@@ -61,22 +61,22 @@ def new(request):
             recipe.author = author
             recipe.save()
             for form in formset:
-                name = form.cleaned_data.get('name')
-                measure = form.cleaned_data.get('measure')
-                if name:
+                if form.is_valid():
+                    name = form.cleaned_data.get('name')
+                    measure = form.cleaned_data.get('measure')
                     ingredient = Ingredient.objects.get_or_create(name=name)[0]
                     Measure.objects.create(ingredient=ingredient,
                                            recipe=recipe, measure=measure)
-            recipe.indexing()
-            return redirect('index')
-    return render(request, 'recipes/new.html', {'form': form,
-                                                'formset': formset})
+            return redirect('detail', recipe_id=recipe.pk)
+    return render(request, 'recipes/form.html', {'form': form,
+                                                 'formset': formset,
+                                                 'title': 'Criar Receita'})
 
 
 def update(request, recipe_id):
     recipe = get_object_or_404(Recipe, pk=recipe_id)
     if request.method == 'POST':
-        form = RecipeForm(request.POST, instance=recipe)
+        form = RecipeForm(request.POST, request.FILES, instance=recipe)
         formset = IngredientUpdateSet(request.POST)
         if form.is_valid():
             recipe = form.save()
@@ -87,13 +87,14 @@ def update(request, recipe_id):
                             f.cleaned_data.get('measure')
             if new_ingredients:
                 recipe.update_ingredients(new_ingredients)
-            recipe.update_index()
+            recipe.indexing()
             return redirect('detail', recipe_id=recipe.id)
     form = RecipeForm(instance=recipe)
     initial_data = recipe.gen_initial_form_data()
     formset = IngredientUpdateSet(initial=initial_data)
-    return render(request, 'recipes/update.html', {'form': form,
-                                                   'formset': formset})
+    return render(request, 'recipes/form.html', {'form': form,
+                                                 'formset': formset,
+                                                 'title': 'Update'})
 
 
 def detail(request, recipe_id):
@@ -146,8 +147,8 @@ def mycookbook(request):
     recipes = request.user.cookbook.all()
     recipe_col = [{'recipe': recipe, 'ingredients': recipe.measure_set.all()}
                   for recipe in recipes]
-    return render(request, 'recipes/cookbook.html', {'recipe_col': recipe_col,
-                                                     'title': 'MyCookBook'})
+    return render(request, 'recipes/mycookbook.html', {'recipes': recipe_col
+                                                       })
 
 
 def suggestions(request):

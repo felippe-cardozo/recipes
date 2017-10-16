@@ -5,16 +5,45 @@
 {% endblock %}
 {% block body %}
                 
+<div class='row'>
+        <div class='col-sm-8' style='border: 20px solid transparent; padding:10px;'>
 
-<div class="jumbotron">
         <p> <h2>{{ recipe.title }}</h2> </p>
-        <p>  {{ recipe.description }} </p>
-        <p> Ingredientes: </p> 
+
+        </div>
+</div>
+<div class='row'>
+        <div class='col-sm-8' style='border: 20px solid transparent; padding:10px;'>
+        {% if recipe.image %}
+        <a href="{{recipe.image.url}}" target="_blank">
+        <img src="{{recipe.image.url}}" alt="{{recipe.title}}" class='img-responsive'></a>
+        {% else  %}
+        <h4><strong>Descrição:</strong></h4>
+        <h4>  {{ recipe.description }} </h4>
+        {% endif %}
+        </div>
+        <div class='col-sm-3' style='margin-top:0px'>
+        <p> <h3> Ingredientes: </h3></p> 
+        <ul>
         {% for i in ingredients %}
-                <p id='ingredient'>
-                {{ i.ingredient.name }} {{ i.measure }}
-                </p>
+                
+        <li><h6>{{ i.ingredient.name }}: {{ i.measure }}</h6></li>
+                
         {% endfor %}
+        </ul> 
+        </div>
+        {% if recipe.image %}
+        <div class='col-sm-8' style='border: 20px solid transparent; padding:10px;'>
+                <h4><strong>Descrição:</strong></h4>
+         <h4>  {{ recipe.description }} </h4>
+        </div>
+        {% endif %}
+        
+        <div class='col-sm-8' style='border: 20px solid transparent; padding:10px;'>
+                <h4><strong>Modo de preparo:</strong></h4>
+                <h4>{{ recipe.procedures }}</h4>
+        </div>
+        <div class='col-sm-8' style='border: 20px solid transparent; padding:10px;'>
   <strong id="likes_count">{{ recipe.likes.count }}</strong> people liked this recipe
   {% if user.is_authenticated %}
           
@@ -22,7 +51,7 @@
       <button style='display: none;' class="btn btn-sm" id="like" data-rid="{{ recipe.id }}"  type="button"> Like </button>
       <button id='unlike' class="btn btn-primary btn-sm" data-rid="{{recipe.id}}"  type="button"> Like </button>
       {% else %}
-          <button id="like" class="btn-sm" data-rid="{{ recipe.id }}"  type="button"> Like </button>
+          <button id="like" class="btn btn-sm" data-rid="{{ recipe.id }}"  type="button"> Like </button>
           <button style='display: none;' class="btn btn-primary btn-sm" id='unlike' data-rid="{{recipe.id}}"  type="button"> Like </button>
           {% endif %}
      {% if recipe in user.cookbooks.all %}
@@ -33,13 +62,16 @@
           <button id='add_cookbook' class="btn btn-sm" type="button">MyCookBook</button>
           {% endif %}
   {% endif %}
-</div>
 <p>
   <a href="{% url 'index' %}">Index</a>
   {% if user == recipe.author %}
   <a href="{% url 'update' recipe.id %}">Update</a>
   {% endif %}
 </p>
+
+        </div>
+        </div>
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src={% static 'recipes/likes.js' %}></script>
 {% endblock %}

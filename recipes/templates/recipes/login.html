@@ -21,7 +21,8 @@ Login
     {% endif %}
                         <form action="" method="post" accept-charset="utf-8">
                                 {% csrf_token %}
-                                {{ form.as_p }}
+                                {% load bootstrap %}
+                                {{ form|bootstrap }}
                                 <p>
                                 <input type='submit' value="Login"/>
                                 </p>

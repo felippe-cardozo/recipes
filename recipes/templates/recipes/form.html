@@ -1,25 +1,9 @@
-{% extends 'base.html' %}                        
-{% load staticfiles %}
+{% extends 'base.html' %}
 {% block title %}
-Change
+{{ title }}
 {% endblock %}
+{% load staticfiles %}
 {% block body %}
-<form action="" method="post" accept-charset="utf-8" enctype='multipart/form-data'>
-                                {% csrf_token %}
-                                {% load bootstrap %}
-                                {{ form|bootstrap }}
-                                {{ formset.management_form }}
-                                {% for f in formset %}
-                                <div class='ingredient'>
-                                {{ f|bootstrap }}
-                                </div>
-                                {% endfor %}
-                                <p>
-                                <input type='submit' value="Submit"/>
-                                </p>
-                        </form>
-
-                        {% load staticfiles %}
 {% if formset.non_form_errors %}
         {{ formset.non_form_errors }}
 {% endif %}
@@ -39,7 +23,20 @@ Change
     {% endfor %}
     {% endif %}
     {% endfor %}
-
+                        <form action="" method="post" accept-charset="utf-8" enctype='multipart/form-data'>
+                                {% csrf_token %}
+                                {% load bootstrap %}
+                                {{ form|bootstrap }}
+                                {{ formset.management_form }}
+                                {% for f in formset %}
+                                <div class='ingredient'>
+                                {{ f|bootstrap }}
+                                </div>
+                                {% endfor %}
+                                <p>
+                                <input type='submit' value="Submit"/>
+                                </p>
+                        </form>
 <!-- use django dynamic formset plugin to add and remove form fields on the fly 
         https://github.com/elo80ka/django-dynamic-formset-->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -48,7 +45,7 @@ Change
 <!-- remember to set the prefix (defaults to the relationship field name), otherwise the new and old fields overlap each other -->
 <script type="text/javascript">
     $(function() {
-            $('.ingredient').formset({addText: '+ ingredientes', deleteText: 'x'});
+            $('.ingredient').formset({addText: 'adicionar mais ingredientes', deleteText: 'remover'});
     })
 </script>
 {% endblock %}

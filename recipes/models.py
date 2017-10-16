@@ -81,9 +81,7 @@ class Recipe(models.Model):
             return self.image.url
 
     def indexing(self):
-        es = Elasticsearch()
-        if es.exists('recipe_index', 'recipe_index', id=self.pk):
-            es.delete('recipe_index', 'recipe_index', id=self.pk)
+        self.es_delete()
         obj = RecipeIndex(
                 meta={'id': self.id},
                 author=self.author.username,
@@ -98,6 +96,11 @@ class Recipe(models.Model):
                 )
         obj.save()
         return obj.to_dict(include_meta=True)
+
+    def es_delete(self):
+        es = Elasticsearch()
+        if es.exists('recipe_index', 'recipe_index', id=self.pk):
+            es.delete('recipe_index', 'recipe_index', id=self.pk)
 
 
 class Measure(models.Model):
